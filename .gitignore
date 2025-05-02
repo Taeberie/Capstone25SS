@@ -4,3 +4,6 @@
 
 # VS code
 .vscode
+
+# test 파일
+test*
