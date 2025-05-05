@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  5 MAY 2025 18:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  5 MAY 2025 19:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.tex"
-(/Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.tex
+**/Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.tex
+(/Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/extsizes/extarticle.cls
@@ -202,7 +202,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count287
 \l__pdf_internal_box=\box54
-) (/Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.aux)
+) (/Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.aux)
 \openout1 = `Latex_Preview.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -299,21 +299,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[2 </Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Preprocessing.png>]
-<Photo_Result.png, id=69, 523.9575pt x 194.7275pt>
+[2 </Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Preprocessing.png>]
+<Photo_Result.png, id=69, 1557.82pt x 565.11125pt>
 File: Photo_Result.png Graphic file (type png)
 <use Photo_Result.png>
 Package pdftex.def Info: Photo_Result.png  used on input line 64.
-(pdftex.def)             Requested size: 375.80544pt x 139.67181pt.
+(pdftex.def)             Requested size: 375.80544pt x 136.31929pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[3 </Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Heatmap.png>]
+[3 </Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Heatmap.png>]
 
-[4 </Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Result.png>] (/Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.aux)
+[4 </Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Result.png>] (/Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -321,14 +321,14 @@ L3 programming layer <2025-01-18>
  ) 
 Here is how much of TeX's memory you used:
  3171 strings out of 473190
- 52411 string characters out of 5715801
- 451787 words of memory out of 5000000
+ 52265 string characters out of 5715801
+ 451778 words of memory out of 5000000
  26355 multiletter control sequences out of 15000+600000
  582429 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,6n,65p,345b,239s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 59i,6n,65p,327b,239s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbba.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb>
-Output written on "/Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.pdf" (4 pages, 2770557 bytes).
+Output written on /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.pdf (4 pages, 3583505 bytes).
 PDF statistics:
  305 PDF objects out of 1000 (max. 8388607)
  179 compressed objects within 2 object streams
