@@ -1,9 +1,9 @@
-PWD /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서
+PWD /Users/taeberie/Desktop/Capstone25SS/보고서/9주차
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.tex
-OUTPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.log
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.tex
+OUTPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/extsizes/extarticle.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/extsizes/extarticle.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/extsizes/size14.clo
@@ -62,10 +62,10 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.aux
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.aux
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.aux
-OUTPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.aux
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.aux
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.aux
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.aux
+OUTPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
@@ -156,22 +156,22 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb6.
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb5.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbc.tfm
-OUTPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.pdf
+OUTPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.pdf
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Preprocessing.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Preprocessing.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Preprocessing.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Preprocessing.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Preprocessing.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Preprocessing.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Preprocessing.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Preprocessing.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc2.tfm
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Heatmap.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Heatmap.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Heatmap.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Heatmap.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Result.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Result.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Result.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Photo_Result.png
-INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차 정례보고서/Latex_Preview.aux
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Heatmap.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Heatmap.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Heatmap.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Heatmap.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Result.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Result.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Result.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Photo_Result.png
+INPUT /Users/taeberie/Desktop/Capstone25SS/보고서/9주차/Latex_Preview.aux
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
