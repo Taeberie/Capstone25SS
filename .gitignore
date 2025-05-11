@@ -10,3 +10,5 @@ test*
 
 # Server
 __pycache__
+
+*.pdf
