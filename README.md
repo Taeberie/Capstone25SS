@@ -78,3 +78,26 @@ print(ip_traffic.head(10))
 
 ## 추가로 해야할 일
 간단한 로드 밸런싱 알고리즘을 구현해보며 시뮬레이션 실행
+
+## 로드밸런싱 테스트 방법
+```bash
+uvicorn {앱이름}:app --port {포트}
+```
+
+###  예시 다음 4개를 터미널에 실행
+```bash
+uvicorn LoadBalancing:app --port 8000
+uvicorn Server:app --port 8001
+uvicorn Server:app --port 8002
+uvicorn Server:app --port 8003
+```
+
+## 서버 부하 테스트
+```bash
+ab -n 1000 -c 100 {사이트주소}
+```
+
+###  예시 다음을 터미널에 실행
+```bash
+ab -n 1000 -c 100 http://localhost:8000/
+```

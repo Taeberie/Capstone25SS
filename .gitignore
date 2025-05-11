@@ -7,3 +7,6 @@
 
 # test 파일
 test*
+
+# Server
+__pycache__
