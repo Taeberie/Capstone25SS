@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 
 # === 1. 설정 ===
-PCAP_FILE = "vpn_traffic_20250511_163852.pcap"  # pcap 경로
-OUTPUT_CSV = "session_features_iscx_format.csv"
+PCAP_FILE = "traffic캡처/vpn캡처/vpn_traffic_20250522_151934.pcap"  # pcap 경로
+OUTPUT_CSV = "traffic캡처/vpn캡처/0522vpn_capture.csv"
 
 # === 2. pcap 로드 및 세션 분류 ===
 packets = rdpcap(PCAP_FILE)
