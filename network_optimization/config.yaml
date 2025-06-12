@@ -1,0 +1,56 @@
+# 주요 파라미터
+alpha: 0.5            # delay 가중치
+beta: 0.3             # load/bandwidth 가중치
+gamma: 0.2            # QoS 가중치
+
+# 로드밸런서 전체 수요
+demand: 150
+
+# 서버별 최대 처리 용량
+capacities:
+  Server1: 100
+  Server2: 100
+
+# 물리 토폴로지 정의
+edges:
+  - from: LoadBalancer
+    to: Router1
+    delay: 1
+    load: 0
+    bandwidth: 100
+    qos: 1.0
+
+  - from: LoadBalancer
+    to: Router2
+    delay: 1
+    load: 0
+    bandwidth: 100
+    qos: 1.0
+
+  - from: Router1
+    to: Server1
+    delay: 2
+    load: 0
+    bandwidth: 100
+    qos: 1.0
+
+  - from: Router1
+    to: Server2
+    delay: 2
+    load: 0
+    bandwidth: 100
+    qos: 1.0
+
+  - from: Router2
+    to: Server1
+    delay: 3
+    load: 0
+    bandwidth: 100
+    qos: 1.0
+
+  - from: Router2
+    to: Server2
+    delay: 3
+    load: 0
+    bandwidth: 100
+    qos: 1.0
