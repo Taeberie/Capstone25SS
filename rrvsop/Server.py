@@ -1,4 +1,5 @@
 import time
+import numpy as np
 
 # 서버 클래스 정의
 class Server:
@@ -6,6 +7,7 @@ class Server:
     self.name = name
     self.bandwidth = bandwidth  # 처리 속도 (bytes/sec)
     self.pending_requests = []  # 처리 중인 요청들 (각 요청은 남은 처리 시간)
+    self.max_latency = 0
     self.total_latency = 0
     self.total_requests = 0
     self.total_time = 0
@@ -23,10 +25,15 @@ class Server:
         time.sleep(0.001)
         continue
       start = time.time()
+      
       start_time, duration = self.pending_requests.pop(0)
       time.sleep(duration)  # 실제 처리 시간만큼 대기
-      self.total_latency += (time.time() - start_time)
+      elapsed = time.time() - start_time
+      
+      self.max_latency = max(self.max_latency, elapsed)
+      self.total_latency += elapsed
       self.total_requests += 1
+      
       end = time.time()
       self.total_time += end - start
 
@@ -48,3 +55,24 @@ class Server:
     self.pending_requests = []
     self.total_latency = 0
     self.total_requests = 0
+
+def calculate_metrics(servers: list[Server]):
+  # 요청 수, 평균 응답 시간, 총 처리 시간 수집
+  request_counts = [s.total_requests for s in servers]
+  avg_latencies = [s.avg_latency() for s in servers]
+  total_times = [s.total_time for s in servers]
+
+  # 평균 응답 시간 (서버 평균)
+  average_latency = np.mean(avg_latencies)
+
+  # 전체 처리량 (총 요청 수 / 평균 시간)
+  total_requests = sum(request_counts)
+  total_elapsed_time = max(total_times)
+  throughput = total_requests / total_elapsed_time if total_elapsed_time > 0 else 0
+
+  # Jain’s Fairness Index
+  numerator = total_requests ** 2
+  denominator = len(servers) * sum(r**2 for r in request_counts)
+  jain_index = numerator / denominator if denominator > 0 else 0
+
+  return average_latency, throughput, jain_index
