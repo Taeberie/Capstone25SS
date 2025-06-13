@@ -14,6 +14,5 @@ __pycache__
 *.pdf
 
 # ns3
-network_optimization/ns-3.45/**
-!network_optimization/ns-3.45/scratch/route_simulation.cpp
-!network_optimization/ns-3.45/build
+ns-3/*
+!ns-3/scratch/
