@@ -1,0 +1,3175 @@
+{
+  "metainfo": {
+    "title": "로드밸런싱 알고리즘 비교",
+    "description": "서버별 로드밸런싱 알고리즘의 성능을 비교합니다.",
+    "servers": [
+      {
+        "name": "Server1",
+        "bandwidth": 1000
+      },
+      {
+        "name": "Server2",
+        "bandwidth": 800
+      },
+      {
+        "name": "Server3",
+        "bandwidth": 900
+      },
+      {
+        "name": "Server4",
+        "bandwidth": 700
+      }
+    ],
+    "total_request": 100,
+    "algorithms": [
+      "Round Robin",
+      "Weighted RR",
+      "Least Conn",
+      "Optimized"
+    ]
+  },
+  "requests": [
+    {
+      "request_id": 1,
+      "size": 65.99651266865284,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.06755995750427246,
+          "time": 0.06640386581420898
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.07170915603637695,
+          "time": 0.07108211517333984
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.0682668685913086,
+          "time": 0.06737804412841797
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.0735921859741211,
+          "time": 0.07105875015258789
+        }
+      ]
+    },
+    {
+      "request_id": 2,
+      "size": 95.41132466110321,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.12547612190246582,
+          "time": 0.1242990493774414
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.17086100578308105,
+          "time": 0.09911608695983887
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.12531375885009766,
+          "time": 0.12437772750854492
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.12684273719787598,
+          "time": 0.12430071830749512
+        }
+      ]
+    },
+    {
+      "request_id": 3,
+      "size": 97.32758728436156,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.11436700820922852,
+          "time": 0.11317801475524902
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.27324914932250977,
+          "time": 0.10241103172302246
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.11417603492736816,
+          "time": 0.11322689056396484
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.11340689659118652,
+          "time": 0.11087608337402344
+        }
+      ]
+    },
+    {
+      "request_id": 4,
+      "size": 51.31201491633798,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.07955408096313477,
+          "time": 0.07833290100097656
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.3296530246734619,
+          "time": 0.05639076232910156
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.07933330535888672,
+          "time": 0.07835960388183594
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.08086180686950684,
+          "time": 0.0783228874206543
+        }
+      ]
+    },
+    {
+      "request_id": 5,
+      "size": 67.74975525694595,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.14032840728759766,
+          "time": 0.07276582717895508
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.40234375,
+          "time": 0.07267212867736816
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.14110016822814941,
+          "time": 0.07280921936035156
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.14627408981323242,
+          "time": 0.07270979881286621
+        }
+      ]
+    },
+    {
+      "request_id": 6,
+      "size": 97.56413993741575,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.25064802169799805,
+          "time": 0.12517929077148438
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.5049810409545898,
+          "time": 0.1026146411895752
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.25231075286865234,
+          "time": 0.12700796127319336
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.2252519130706787,
+          "time": 0.14441299438476562
+        }
+      ]
+    },
+    {
+      "request_id": 7,
+      "size": 79.38774317203527,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.20761895179748535,
+          "time": 0.0932459831237793
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.5863597393035889,
+          "time": 0.08138918876647949
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.20746493339538574,
+          "time": 0.09326386451721191
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.20666885375976562,
+          "time": 0.09329104423522949
+        }
+      ]
+    },
+    {
+      "request_id": 8,
+      "size": 50.047671516091526,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.15608596801757812,
+          "time": 0.07652401924133301
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.6410481929779053,
+          "time": 0.054662227630615234
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.1558818817138672,
+          "time": 0.07653331756591797
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.19160199165344238,
+          "time": 0.06483888626098633
+        }
+      ]
+    },
+    {
+      "request_id": 9,
+      "size": 52.4515699763466,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.19779491424560547,
+          "time": 0.05746912956237793
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.6953158378601074,
+          "time": 0.05426788330078125
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.19849228858947754,
+          "time": 0.05740785598754883
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.20373296737670898,
+          "time": 0.05749678611755371
+        }
+      ]
+    },
+    {
+      "request_id": 10,
+      "size": 51.25858495397966,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.31616997718811035,
+          "time": 0.0655202865600586
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.7517318725585938,
+          "time": 0.05639386177062988
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.3201479911804199,
+          "time": 0.06783199310302734
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.2572917938232422,
+          "time": 0.06569027900695801
+        }
+      ]
+    },
+    {
+      "request_id": 11,
+      "size": 62.64175196104504,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.28226709365844727,
+          "time": 0.07465291023254395
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.8152041435241699,
+          "time": 0.06346702575683594
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.27803707122802734,
+          "time": 0.07057595252990723
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.2671358585357666,
+          "time": 0.06341719627380371
+        }
+      ]
+    },
+    {
+      "request_id": 12,
+      "size": 50.65737421478617,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.2334892749786377,
+          "time": 0.07740592956542969
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.8709819316864014,
+          "time": 0.05574989318847656
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.23062396049499512,
+          "time": 0.07476615905761719
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.2679431438446045,
+          "time": 0.061327219009399414
+        }
+      ]
+    },
+    {
+      "request_id": 13,
+      "size": 54.414603896064776,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.2572360038757324,
+          "time": 0.05944013595581055
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 0.9305179119110107,
+          "time": 0.059526920318603516
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.2579789161682129,
+          "time": 0.05947303771972656
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.3072512149810791,
+          "time": 0.08207893371582031
+        }
+      ]
+    },
+    {
+      "request_id": 14,
+      "size": 74.4190930599382,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.4116501808166504,
+          "time": 0.09547615051269531
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.0100510120391846,
+          "time": 0.0795278549194336
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.418215274810791,
+          "time": 0.09806299209594727
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.35535693168640137,
+          "time": 0.0980989933013916
+        }
+      ]
+    },
+    {
+      "request_id": 15,
+      "size": 90.61656495508042,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.3833150863647461,
+          "time": 0.10104084014892578
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.1057708263397217,
+          "time": 0.095703125
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.3837859630584717,
+          "time": 0.10577011108398438
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.36285996437072754,
+          "time": 0.09566211700439453
+        }
+      ]
+    },
+    {
+      "request_id": 16,
+      "size": 69.19952709400572,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.33286309242248535,
+          "time": 0.0993809700012207
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.1800508499145508,
+          "time": 0.07427501678466797
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.33457303047180176,
+          "time": 0.1039268970489502
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.349564790725708,
+          "time": 0.08168721199035645
+        }
+      ]
+    },
+    {
+      "request_id": 17,
+      "size": 52.99223388301025,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.3152592182159424,
+          "time": 0.058027029037475586
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.2381298542022705,
+          "time": 0.05806589126586914
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.3113679885864258,
+          "time": 0.053392887115478516
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.38796305656433105,
+          "time": 0.08075618743896484
+        }
+      ]
+    },
+    {
+      "request_id": 18,
+      "size": 62.6839879294804,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.4916999340057373,
+          "time": 0.08003568649291992
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.3054909706115723,
+          "time": 0.0673527717590332
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.5015952587127686,
+          "time": 0.08338403701782227
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.42385005950927734,
+          "time": 0.07428598403930664
+        }
+      ]
+    },
+    {
+      "request_id": 19,
+      "size": 60.3849605298582,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.4520728588104248,
+          "time": 0.06873512268066406
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.3709797859191895,
+          "time": 0.06548190116882324
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.4559652805328369,
+          "time": 0.07214784622192383
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.43311095237731934,
+          "time": 0.0778050422668457
+        }
+      ]
+    },
+    {
+      "request_id": 20,
+      "size": 96.70234114219069,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.47606801986694336,
+          "time": 0.1431868076324463
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.4727962017059326,
+          "time": 0.10180401802062988
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.47776198387145996,
+          "time": 0.1431901454925537
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.46446824073791504,
+          "time": 0.1017448902130127
+        }
+      ]
+    },
+    {
+      "request_id": 21,
+      "size": 97.46129340936876,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.4178628921508789,
+          "time": 0.1025991439819336
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.5736780166625977,
+          "time": 0.10086894035339355
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.4138760566711426,
+          "time": 0.10250973701477051
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.5320498943328857,
+          "time": 0.14421606063842773
+        }
+      ]
+    },
+    {
+      "request_id": 22,
+      "size": 91.70768147773713,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.6113851070404053,
+          "time": 0.1196889877319336
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.66554594039917,
+          "time": 0.09186697006225586
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.6196920871734619,
+          "time": 0.11810469627380371
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.5306618213653564,
+          "time": 0.1069481372833252
+        }
+      ]
+    },
+    {
+      "request_id": 23,
+      "size": 59.48499867541733,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.5232009887695312,
+          "time": 0.07112383842468262
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.7277309894561768,
+          "time": 0.062164306640625
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.5271031856536865,
+          "time": 0.07115697860717773
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.512380838394165,
+          "time": 0.07942986488342285
+        }
+      ]
+    },
+    {
+      "request_id": 24,
+      "size": 50.29481146800797,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.5498900413513184,
+          "time": 0.07381987571716309
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.779984951019287,
+          "time": 0.05224776268005371
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.5516819953918457,
+          "time": 0.07392096519470215
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.5197489261627197,
+          "time": 0.055351972579956055
+        }
+      ]
+    },
+    {
+      "request_id": 25,
+      "size": 66.8546075582811,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.4857511520385742,
+          "time": 0.06788015365600586
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.8502089977264404,
+          "time": 0.07021713256835938
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.48577404022216797,
+          "time": 0.07188582420349121
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.5916709899902344,
+          "time": 0.07194089889526367
+        }
+      ]
+    },
+    {
+      "request_id": 26,
+      "size": 71.19797703169714,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.7054438591003418,
+          "time": 0.0940542221069336
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.9265539646148682,
+          "time": 0.07632207870483398
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.7137389183044434,
+          "time": 0.0940549373626709
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.606407880783081,
+          "time": 0.09404897689819336
+        }
+      ]
+    },
+    {
+      "request_id": 27,
+      "size": 58.0184402787947,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.5920560359954834,
+          "time": 0.06885313987731934
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 1.986854076385498,
+          "time": 0.06026005744934082
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.596642017364502,
+          "time": 0.0695188045501709
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.5993080139160156,
+          "time": 0.06872010231018066
+        }
+      ]
+    },
+    {
+      "request_id": 28,
+      "size": 73.91231195639689,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.6600258350372314,
+          "time": 0.11012983322143555
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.0655181407928467,
+          "time": 0.07863688468933105
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.6613960266113281,
+          "time": 0.1097099781036377
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.6425669193267822,
+          "time": 0.11062812805175781
+        }
+      ]
+    },
+    {
+      "request_id": 29,
+      "size": 77.64221380999768,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.568422794342041,
+          "time": 0.0826730728149414
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.1457300186157227,
+          "time": 0.08020997047424316
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.5674829483032227,
+          "time": 0.08171701431274414
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.6742861270904541,
+          "time": 0.082672119140625
+        }
+      ]
+    },
+    {
+      "request_id": 30,
+      "size": 60.365506879416245,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.7828588485717773,
+          "time": 0.07740473747253418
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.2081849575042725,
+          "time": 0.062441349029541016
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.7899730205535889,
+          "time": 0.07622671127319336
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.6699681282043457,
+          "time": 0.07083797454833984
+        }
+      ]
+    },
+    {
+      "request_id": 31,
+      "size": 69.69344108565119,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.6745316982269287,
+          "time": 0.08247971534729004
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.281310796737671,
+          "time": 0.07312989234924316
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.678084135055542,
+          "time": 0.08144497871398926
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.6983752250671387,
+          "time": 0.09217715263366699
+        }
+      ]
+    },
+    {
+      "request_id": 32,
+      "size": 54.08101559705006,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.7423098087310791,
+          "time": 0.08229398727416992
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.337904930114746,
+          "time": 0.05658698081970215
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.7412950992584229,
+          "time": 0.07990694046020508
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.7246401309967041,
+          "time": 0.08230400085449219
+        }
+      ]
+    },
+    {
+      "request_id": 33,
+      "size": 86.52136051339153,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.6599857807159424,
+          "time": 0.09157180786132812
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.429542064666748,
+          "time": 0.09163594245910645
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.6590580940246582,
+          "time": 0.09160304069519043
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.7628512382507324,
+          "time": 0.08878898620605469
+        }
+      ]
+    },
+    {
+      "request_id": 34,
+      "size": 97.2521508049926,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.9094820022583008,
+          "time": 0.12661385536193848
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.5313189029693604,
+          "time": 0.1017601490020752
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.914099931716919,
+          "time": 0.12413191795349121
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.7826328277587891,
+          "time": 0.11276793479919434
+        }
+      ]
+    },
+    {
+      "request_id": 35,
+      "size": 86.29044668771219,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.7749550342559814,
+          "time": 0.10042381286621094
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.6227152347564697,
+          "time": 0.09138989448547363
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.777998685836792,
+          "time": 0.09992194175720215
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.8106238842010498,
+          "time": 0.11235618591308594
+        }
+      ]
+    },
+    {
+      "request_id": 36,
+      "size": 97.5307400898435,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.8849060535430908,
+          "time": 0.1425647735595703
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.72253680229187,
+          "time": 0.09980630874633789
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.8856840133666992,
+          "time": 0.14441204071044922
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.866786003112793,
+          "time": 0.14221906661987305
+        }
+      ]
+    },
+    {
+      "request_id": 37,
+      "size": 65.83814860303562,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.7264878749847412,
+          "time": 0.06649589538574219
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.7934699058532715,
+          "time": 0.0709083080291748
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.7299880981445312,
+          "time": 0.07090020179748535
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.831193208694458,
+          "time": 0.06840395927429199
+        }
+      ]
+    },
+    {
+      "request_id": 38,
+      "size": 55.311690061575725,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 0.9828140735626221,
+          "time": 0.07331681251525879
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.853829860687256,
+          "time": 0.060347795486450195
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 0.9867730140686035,
+          "time": 0.07267189025878906
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.8490951061248779,
+          "time": 0.0665290355682373
+        }
+      ]
+    },
+    {
+      "request_id": 39,
+      "size": 99.75233730393909,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.8908519744873047,
+          "time": 0.11588621139526367
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 2.957634925842285,
+          "time": 0.10381603240966797
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.8938829898834229,
+          "time": 0.1158757209777832
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 0.9403049945831299,
+          "time": 0.12973809242248535
+        }
+      ]
+    },
+    {
+      "request_id": 40,
+      "size": 68.78369794392253,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 0.9837970733642578,
+          "time": 0.09887409210205078
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.031486988067627,
+          "time": 0.0738379955291748
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 0.9890329837799072,
+          "time": 0.10331583023071289
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.9049887657165527,
+          "time": 0.07383966445922852
+        }
+      ]
+    },
+    {
+      "request_id": 41,
+      "size": 88.06103008537616,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.8171141147613525,
+          "time": 0.09061193466186523
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.1243879795074463,
+          "time": 0.09296822547912598
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.8231022357940674,
+          "time": 0.09312200546264648
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 0.9476099014282227,
+          "time": 0.0986337661743164
+        }
+      ]
+    },
+    {
+      "request_id": 42,
+      "size": 81.66347122164701,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.0899293422698975,
+          "time": 0.10712409019470215
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.2078421115875244,
+          "time": 0.08336997032165527
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.0939033031463623,
+          "time": 0.10715103149414062
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 0.9883167743682861,
+          "time": 0.12171483039855957
+        }
+      ]
+    },
+    {
+      "request_id": 43,
+      "size": 77.14982560369927,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 0.9816312789916992,
+          "time": 0.09077310562133789
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.290010690689087,
+          "time": 0.0821690559387207
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 0.9815170764923096,
+          "time": 0.08765506744384766
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 0.9823241233825684,
+          "time": 0.07750773429870605
+        }
+      ]
+    },
+    {
+      "request_id": 44,
+      "size": 81.6557146988609,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 1.1054859161376953,
+          "time": 0.12169122695922852
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.3767008781433105,
+          "time": 0.08669304847717285
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 1.110718011856079,
+          "time": 0.12169599533081055
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.0472350120544434,
+          "time": 0.10715293884277344
+        }
+      ]
+    },
+    {
+      "request_id": 45,
+      "size": 93.71104088610161,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 0.9158670902252197,
+          "time": 0.09875297546386719
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.4756879806518555,
+          "time": 0.09898686408996582
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 0.9218707084655762,
+          "time": 0.09876298904418945
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.0566599369049072,
+          "time": 0.10916399955749512
+        }
+      ]
+    },
+    {
+      "request_id": 46,
+      "size": 67.85919431255684,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.1797969341278076,
+          "time": 0.08985495567321777
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.5442819595336914,
+          "time": 0.06858587265014648
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.1838099956512451,
+          "time": 0.08987593650817871
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.0551660060882568,
+          "time": 0.07290172576904297
+        }
+      ]
+    },
+    {
+      "request_id": 47,
+      "size": 54.520902675007896,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.0472590923309326,
+          "time": 0.06563401222229004
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.5998940467834473,
+          "time": 0.055609703063964844
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.0422382354736328,
+          "time": 0.060704946517944336
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.071112871170044,
+          "time": 0.08293604850769043
+        }
+      ]
+    },
+    {
+      "request_id": 48,
+      "size": 59.35587441590764,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 1.1931040287017822,
+          "time": 0.08761191368103027
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.6640617847442627,
+          "time": 0.06416606903076172
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 1.2005679607391357,
+          "time": 0.08985304832458496
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.1152613162994385,
+          "time": 0.06014275550842285
+        }
+      ]
+    },
+    {
+      "request_id": 49,
+      "size": 87.56402646267145,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.007817029953003,
+          "time": 0.0919489860534668
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.7535500526428223,
+          "time": 0.08949089050292969
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.0144829750061035,
+          "time": 0.09261274337768555
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.1585650444030762,
+          "time": 0.11144495010375977
+        }
+      ]
+    },
+    {
+      "request_id": 50,
+      "size": 65.34634899557994,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.2661359310150146,
+          "time": 0.08633613586425781
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.8204290866851807,
+          "time": 0.06686973571777344
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.2705349922180176,
+          "time": 0.08672809600830078
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.1341979503631592,
+          "time": 0.07766008377075195
+        }
+      ]
+    },
+    {
+      "request_id": 51,
+      "size": 92.22785803850931,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.1511950492858887,
+          "time": 0.10392427444458008
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 3.9163448810577393,
+          "time": 0.09592914581298828
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.149770975112915,
+          "time": 0.1075277328491211
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.2061991691589355,
+          "time": 0.13519883155822754
+        }
+      ]
+    },
+    {
+      "request_id": 52,
+      "size": 95.70525890232152,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 1.3344221115112305,
+          "time": 0.14130878448486328
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.016343832015991,
+          "time": 0.09998607635498047
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 1.3423430919647217,
+          "time": 0.14176583290100098
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.2120559215545654,
+          "time": 0.09688186645507812
+        }
+      ]
+    },
+    {
+      "request_id": 53,
+      "size": 82.61684897070579,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.095484972000122,
+          "time": 0.08765411376953125
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.100893259048462,
+          "time": 0.08453083038330078
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.099581241607666,
+          "time": 0.08509993553161621
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.2309787273406982,
+          "time": 0.09683990478515625
+        }
+      ]
+    },
+    {
+      "request_id": 54,
+      "size": 50.897312089922345,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.334378957748413,
+          "time": 0.06824994087219238
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.15627908706665,
+          "time": 0.0553741455078125
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.3392183780670166,
+          "time": 0.06870698928833008
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.2227849960327148,
+          "time": 0.06432795524597168
+        }
+      ]
+    },
+    {
+      "request_id": 55,
+      "size": 89.78649278973202,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.2560091018676758,
+          "time": 0.10480403900146484
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.24636697769165,
+          "time": 0.09006905555725098
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.2496271133422852,
+          "time": 0.09986686706542969
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.3068170547485352,
+          "time": 0.0948190689086914
+        }
+      ]
+    },
+    {
+      "request_id": 56,
+      "size": 83.48831864488137,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 1.458738088607788,
+          "time": 0.12432599067687988
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.331061124801636,
+          "time": 0.08469295501708984
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 1.4666600227355957,
+          "time": 0.12433481216430664
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.3258140087127686,
+          "time": 0.11970996856689453
+        }
+      ]
+    },
+    {
+      "request_id": 57,
+      "size": 63.888910155783506,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.16441011428833,
+          "time": 0.06892108917236328
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.396429061889648,
+          "time": 0.06536674499511719
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.1677141189575195,
+          "time": 0.06813383102416992
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.3060529232025146,
+          "time": 0.07517480850219727
+        }
+      ]
+    },
+    {
+      "request_id": 58,
+      "size": 64.60347509357452,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.4201829433441162,
+          "time": 0.08578681945800781
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.465476989746094,
+          "time": 0.06904125213623047
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.4222607612609863,
+          "time": 0.08301305770874023
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.3067760467529297,
+          "time": 0.08407878875732422
+        }
+      ]
+    },
+    {
+      "request_id": 59,
+      "size": 85.71700972115775,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.3541407585144043,
+          "time": 0.09813404083251953
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.551853895187378,
+          "time": 0.08635902404785156
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.3456401824951172,
+          "time": 0.09599184989929199
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.4063091278076172,
+          "time": 0.10029482841491699
+        }
+      ]
+    },
+    {
+      "request_id": 60,
+      "size": 76.32133167080264,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 1.5728309154510498,
+          "time": 0.11408805847167969
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.62902307510376,
+          "time": 0.07717394828796387
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 1.577578067779541,
+          "time": 0.11090302467346191
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.3880798816680908,
+          "time": 0.0813899040222168
+        }
+      ]
+    },
+    {
+      "request_id": 61,
+      "size": 85.42800999569936,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.2504377365112305,
+          "time": 0.0860288143157959
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.71954607963562,
+          "time": 0.09054803848266602
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.2582011222839355,
+          "time": 0.09049487113952637
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.4142649173736572,
+          "time": 0.10755515098571777
+        }
+      ]
+    },
+    {
+      "request_id": 62,
+      "size": 57.091623253167384,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.496581792831421,
+          "time": 0.07639718055725098
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.781389951705933,
+          "time": 0.06180119514465332
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.4946138858795166,
+          "time": 0.07236623764038086
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.412290096282959,
+          "time": 0.08660507202148438
+        }
+      ]
+    },
+    {
+      "request_id": 63,
+      "size": 66.11468389896422,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.4326419830322266,
+          "time": 0.07849407196044922
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.849092245101929,
+          "time": 0.06770610809326172
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.4208838939666748,
+          "time": 0.07524871826171875
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.4591710567474365,
+          "time": 0.07115793228149414
+        }
+      ]
+    },
+    {
+      "request_id": 64,
+      "size": 70.63748898684473,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 1.6787850856781006,
+          "time": 0.10594391822814941
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 4.92481803894043,
+          "time": 0.07569289207458496
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 1.6835479736328125,
+          "time": 0.10599279403686523
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.4897310733795166,
+          "time": 0.0835411548614502
+        }
+      ]
+    },
+    {
+      "request_id": 65,
+      "size": 84.47338042349607,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.3376140594482422,
+          "time": 0.08716702461242676
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.014461994171143,
+          "time": 0.08963918685913086
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.3477239608764648,
+          "time": 0.08950400352478027
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.5365710258483887,
+          "time": 0.12435293197631836
+        }
+      ]
+    },
+    {
+      "request_id": 66,
+      "size": 93.85907557006684,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.61788010597229,
+          "time": 0.12129521369934082
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.1095757484436035,
+          "time": 0.09512066841125488
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.6126391887664795,
+          "time": 0.11803507804870605
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.536501169204712,
+          "time": 0.1223752498626709
+        }
+      ]
+    },
+    {
+      "request_id": 67,
+      "size": 84.92180593230391,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.5320398807525635,
+          "time": 0.09940004348754883
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.198180198669434,
+          "time": 0.08861207962036133
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.5202770233154297,
+          "time": 0.09940075874328613
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.5490341186523438,
+          "time": 0.08996772766113281
+        }
+      ]
+    },
+    {
+      "request_id": 68,
+      "size": 86.95755323534846,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 1.8080799579620361,
+          "time": 0.12929487228393555
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.2885658740997314,
+          "time": 0.09037995338439941
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 1.8128941059112549,
+          "time": 0.12932324409484863
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.5913100242614746,
+          "time": 0.10167193412780762
+        }
+      ]
+    },
+    {
+      "request_id": 69,
+      "size": 68.00764243247465,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.4073660373687744,
+          "time": 0.06975698471069336
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.361530065536499,
+          "time": 0.0729379653930664
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.420793056488037,
+          "time": 0.07310080528259277
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.6215522289276123,
+          "time": 0.07257819175720215
+        }
+      ]
+    },
+    {
+      "request_id": 70,
+      "size": 56.64732707495535,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.6937270164489746,
+          "time": 0.07584118843078613
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.4219231605529785,
+          "time": 0.060389041900634766
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.6885619163513184,
+          "time": 0.07590103149414062
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.6223480701446533,
+          "time": 0.08591890335083008
+        }
+      ]
+    },
+    {
+      "request_id": 71,
+      "size": 86.73231651325287,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.6328001022338867,
+          "time": 0.10074710845947266
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.510527849197388,
+          "time": 0.08860588073730469
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.6200320720672607,
+          "time": 0.09975790977478027
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.6488590240478516,
+          "time": 0.11249685287475586
+        }
+      ]
+    },
+    {
+      "request_id": 72,
+      "size": 98.86503121707608,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 1.9499468803405762,
+          "time": 0.14185881614685059
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.61444878578186,
+          "time": 0.10391497611999512
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 1.9591801166534424,
+          "time": 0.14629220962524414
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.7056341171264648,
+          "time": 0.11446523666381836
+        }
+      ]
+    },
+    {
+      "request_id": 73,
+      "size": 72.40592614056477,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.4848358631134033,
+          "time": 0.07746315002441406
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.6920788288116455,
+          "time": 0.07763791084289551
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.494654893875122,
+          "time": 0.07382607460021973
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.698227882385254,
+          "time": 0.07681012153625488
+        }
+      ]
+    },
+    {
+      "request_id": 74,
+      "size": 71.20682926574274,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.7828028202056885,
+          "time": 0.08907890319824219
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.76389479637146,
+          "time": 0.0718071460723877
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.7779290676116943,
+          "time": 0.08938097953796387
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.725987195968628,
+          "time": 0.10377693176269531
+        }
+      ]
+    },
+    {
+      "request_id": 75,
+      "size": 68.77578830625168,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.7142579555511475,
+          "time": 0.0814518928527832
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.8377931118011475,
+          "time": 0.07388806343078613
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.7003939151763916,
+          "time": 0.0803682804107666
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.7383267879486084,
+          "time": 0.08958697319030762
+        }
+      ]
+    },
+    {
+      "request_id": 76,
+      "size": 90.19417679244951,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 2.083840847015381,
+          "time": 0.1338942050933838
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 5.933104991912842,
+          "time": 0.09530234336853027
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 2.0931191444396973,
+          "time": 0.1339561939239502
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.7888720035552979,
+          "time": 0.09070086479187012
+        }
+      ]
+    },
+    {
+      "request_id": 77,
+      "size": 73.30525170334379,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.5632009506225586,
+          "time": 0.07835698127746582
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.011553049087524,
+          "time": 0.07843208312988281
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.5730068683624268,
+          "time": 0.0783839225769043
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.7888052463531494,
+          "time": 0.08330583572387695
+        }
+      ]
+    },
+    {
+      "request_id": 78,
+      "size": 80.405819001651,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.8883538246154785,
+          "time": 0.10553812980651855
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.098396062850952,
+          "time": 0.08722209930419922
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.8835361003875732,
+          "time": 0.10560917854309082
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.845782995223999,
+          "time": 0.11991310119628906
+        }
+      ]
+    },
+    {
+      "request_id": 79,
+      "size": 95.66514789704502,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.8224167823791504,
+          "time": 0.10812687873840332
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.195798873901367,
+          "time": 0.09693264961242676
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.8112549781799316,
+          "time": 0.11086273193359375
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.8581249713897705,
+          "time": 0.1199190616607666
+        }
+      ]
+    },
+    {
+      "request_id": 80,
+      "size": 91.92533493042826,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 2.217122793197632,
+          "time": 0.13334918022155762
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.28843879699707,
+          "time": 0.09263896942138672
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 2.2290151119232178,
+          "time": 0.1358790397644043
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.8813328742980957,
+          "time": 0.09259700775146484
+        }
+      ]
+    },
+    {
+      "request_id": 81,
+      "size": 81.71823662602326,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.649505853652954,
+          "time": 0.0863041877746582
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.37216329574585,
+          "time": 0.0837090015411377
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.6598210334777832,
+          "time": 0.08681201934814453
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.8813488483428955,
+          "time": 0.09264922142028809
+        }
+      ]
+    },
+    {
+      "request_id": 82,
+      "size": 69.81653291373215,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 1.9806749820709229,
+          "time": 0.09232187271118164
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.444417953491211,
+          "time": 0.07224273681640625
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 1.9759070873260498,
+          "time": 0.09234905242919922
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 1.9468610286712646,
+          "time": 0.10118985176086426
+        }
+      ]
+    },
+    {
+      "request_id": 83,
+      "size": 95.52085321387678,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 1.9336018562316895,
+          "time": 0.11120104789733887
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.540415048599243,
+          "time": 0.09598994255065918
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.9204108715057373,
+          "time": 0.10915517807006836
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 1.982461929321289,
+          "time": 0.12445211410522461
+        }
+      ]
+    },
+    {
+      "request_id": 84,
+      "size": 52.58070049445172,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 2.2973530292510986,
+          "time": 0.08015894889831543
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.598088979721069,
+          "time": 0.057662010192871094
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 2.3092143535614014,
+          "time": 0.08019709587097168
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 1.9388649463653564,
+          "time": 0.05765414237976074
+        }
+      ]
+    },
+    {
+      "request_id": 85,
+      "size": 81.99055517839008,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.732792854309082,
+          "time": 0.08327388763427734
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.685179948806763,
+          "time": 0.0870819091796875
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.744624137878418,
+          "time": 0.0847921371459961
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 1.9757850170135498,
+          "time": 0.09458208084106445
+        }
+      ]
+    },
+    {
+      "request_id": 86,
+      "size": 63.54746969211771,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 2.0615341663360596,
+          "time": 0.08083987236022949
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.7531657218933105,
+          "time": 0.06797981262207031
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 2.060415029525757,
+          "time": 0.0845038890838623
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 2.007483959197998,
+          "time": 0.0686647891998291
+        }
+      ]
+    },
+    {
+      "request_id": 87,
+      "size": 55.81104951537854,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 2.000678062438965,
+          "time": 0.06704592704772949
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.8106467723846436,
+          "time": 0.0574650764465332
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 1.9872989654541016,
+          "time": 0.06686592102050781
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 2.0311808586120605,
+          "time": 0.08447718620300293
+        }
+      ]
+    },
+    {
+      "request_id": 88,
+      "size": 60.51644159718008,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 2.388887882232666,
+          "time": 0.09154605865478516
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.876259803771973,
+          "time": 0.06560873985290527
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 2.3960211277008057,
+          "time": 0.08686709403991699
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 2.0460381507873535,
+          "time": 0.07033324241638184
+        }
+      ]
+    },
+    {
+      "request_id": 89,
+      "size": 72.43869239263715,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.809570074081421,
+          "time": 0.07677602767944336
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 6.95385479927063,
+          "time": 0.07758402824401855
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.8215937614440918,
+          "time": 0.07694602012634277
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 2.0849380493164062,
+          "time": 0.07752799987792969
+        }
+      ]
+    },
+    {
+      "request_id": 90,
+      "size": 51.13361300572374,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 2.130531072616577,
+          "time": 0.06900620460510254
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.010095119476318,
+          "time": 0.056231021881103516
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 2.129404306411743,
+          "time": 0.0689859390258789
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 2.0512359142303467,
+          "time": 0.06897401809692383
+        }
+      ]
+    },
+    {
+      "request_id": 91,
+      "size": 50.1844608003715,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 2.0614850521087646,
+          "time": 0.06081390380859375
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.0639941692352295,
+          "time": 0.053884267807006836
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 2.0481340885162354,
+          "time": 0.060855865478515625
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 2.106816053390503,
+          "time": 0.06082487106323242
+        }
+      ]
+    },
+    {
+      "request_id": 92,
+      "size": 55.25144022405624,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 2.4729158878326416,
+          "time": 0.08402371406555176
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.121291875839233,
+          "time": 0.05728507041931152
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 2.47790789604187,
+          "time": 0.08182215690612793
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 2.110739231109619,
+          "time": 0.07964515686035156
+        }
+      ]
+    },
+    {
+      "request_id": 93,
+      "size": 64.49672413049285,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.879115104675293,
+          "time": 0.0695500373840332
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.190912961959839,
+          "time": 0.06960010528564453
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.8911380767822266,
+          "time": 0.06955289840698242
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 2.136868715286255,
+          "time": 0.08568811416625977
+        }
+      ]
+    },
+    {
+      "request_id": 94,
+      "size": 94.82431090087569,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 2.2492520809173584,
+          "time": 0.11870980262756348
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.290409803390503,
+          "time": 0.09950900077819824
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 2.253021001815796,
+          "time": 0.12364435195922852
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 2.184760093688965,
+          "time": 0.09990596771240234
+        }
+      ]
+    },
+    {
+      "request_id": 95,
+      "size": 57.738401740090744,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 2.130573034286499,
+          "time": 0.06906914710998535
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.348736047744751,
+          "time": 0.05829119682312012
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 2.1173958778381348,
+          "time": 0.06925177574157715
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 2.1717512607574463,
+          "time": 0.06500673294067383
+        }
+      ]
+    },
+    {
+      "request_id": 96,
+      "size": 74.32558651833796,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 2.5838770866394043,
+          "time": 0.11093521118164062
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.428147315979004,
+          "time": 0.07941627502441406
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 2.5871870517730713,
+          "time": 0.1092679500579834
+        },
+        {
+          "name": "Optimized",
+          "server": "Server4",
+          "latency": 2.2181708812713623,
+          "time": 0.10750889778137207
+        }
+      ]
+    },
+    {
+      "request_id": 97,
+      "size": 53.79937696239512,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server1",
+          "latency": 1.936903953552246,
+          "time": 0.05777692794799805
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.4870641231536865,
+          "time": 0.05890607833862305
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server1",
+          "latency": 1.9500441551208496,
+          "time": 0.05891919136047363
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 2.2079288959503174,
+          "time": 0.07111907005310059
+        }
+      ]
+    },
+    {
+      "request_id": 98,
+      "size": 74.2275083545982,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server2",
+          "latency": 2.34379506111145,
+          "time": 0.09456491470336914
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.565423011779785,
+          "time": 0.07834291458129883
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server2",
+          "latency": 2.3466413021087646,
+          "time": 0.09360265731811523
+        },
+        {
+          "name": "Optimized",
+          "server": "Server3",
+          "latency": 2.254986047744751,
+          "time": 0.08326411247253418
+        }
+      ]
+    },
+    {
+      "request_id": 99,
+      "size": 53.24010029514661,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server3",
+          "latency": 2.1947572231292725,
+          "time": 0.06418991088867188
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.623764991760254,
+          "time": 0.05834221839904785
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server3",
+          "latency": 2.1816599369049072,
+          "time": 0.06426501274108887
+        },
+        {
+          "name": "Optimized",
+          "server": "Server1",
+          "latency": 2.242990016937256,
+          "time": 0.05829811096191406
+        }
+      ]
+    },
+    {
+      "request_id": 100,
+      "size": 76.77718128484615,
+      "algorithm": [
+        {
+          "name": "Round Robin",
+          "server": "Server4",
+          "latency": 2.698641300201416,
+          "time": 0.11474490165710449
+        },
+        {
+          "name": "Weighted RR",
+          "server": "Server1",
+          "latency": 7.702342987060547,
+          "time": 0.07855486869812012
+        },
+        {
+          "name": "Least Conn",
+          "server": "Server4",
+          "latency": 2.701969861984253,
+          "time": 0.11479401588439941
+        },
+        {
+          "name": "Optimized",
+          "server": "Server2",
+          "latency": 2.3049120903015137,
+          "time": 0.09704184532165527
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "Round Robin": {
+      "average_latency": 1.1909565496444703,
+      "throughput": 37.07426247983559,
+      "fairness_index": 1.0,
+      "servers": [
+        {
+          "server": "Server1",
+          "bandwidth": 1000,
+          "avg_latency": 0.9955489921569824,
+          "avg_time": 0.07742676734924317,
+          "total_requests": 25
+        },
+        {
+          "server": "Server2",
+          "bandwidth": 800,
+          "avg_latency": 1.2449274063110352,
+          "avg_time": 0.09370137214660644,
+          "total_requests": 25
+        },
+        {
+          "server": "Server3",
+          "bandwidth": 900,
+          "avg_latency": 1.1656289577484131,
+          "avg_time": 0.08773715972900391,
+          "total_requests": 25
+        },
+        {
+          "server": "Server4",
+          "bandwidth": 700,
+          "avg_latency": 1.3577208423614502,
+          "avg_time": 0.10789155960083008,
+          "total_requests": 25
+        }
+      ]
+    },
+    "Weighted RR": {
+      "average_latency": 0.973418446779251,
+      "throughput": 12.985769662084545,
+      "fairness_index": 0.25,
+      "servers": [
+        {
+          "server": "Server1",
+          "bandwidth": 1000,
+          "avg_latency": 3.893673787117004,
+          "avg_time": 0.07700737237930298,
+          "total_requests": 100
+        },
+        {
+          "server": "Server2",
+          "bandwidth": 800,
+          "avg_latency": 0,
+          "avg_time": 0,
+          "total_requests": 0
+        },
+        {
+          "server": "Server3",
+          "bandwidth": 900,
+          "avg_latency": 0,
+          "avg_time": 0,
+          "total_requests": 0
+        },
+        {
+          "server": "Server4",
+          "bandwidth": 700,
+          "avg_latency": 0,
+          "avg_time": 0,
+          "total_requests": 0
+        }
+      ]
+    },
+    "Least Conn": {
+      "average_latency": 1.1926085782051086,
+      "throughput": 37.02351131518565,
+      "fairness_index": 1.0,
+      "servers": [
+        {
+          "server": "Server1",
+          "bandwidth": 1000,
+          "avg_latency": 1.0008695125579834,
+          "avg_time": 0.07796561241149902,
+          "total_requests": 25
+        },
+        {
+          "server": "Server2",
+          "bandwidth": 800,
+          "avg_latency": 1.2469702529907227,
+          "avg_time": 0.09382833480834961,
+          "total_requests": 25
+        },
+        {
+          "server": "Server3",
+          "bandwidth": 900,
+          "avg_latency": 1.160387020111084,
+          "avg_time": 0.08722726821899414,
+          "total_requests": 25
+        },
+        {
+          "server": "Server4",
+          "bandwidth": 700,
+          "avg_latency": 1.3622075271606446,
+          "avg_time": 0.10803945541381836,
+          "total_requests": 25
+        }
+      ]
+    },
+    "Optimized": {
+      "average_latency": 1.1769388426371457,
+      "throughput": 43.38964647449502,
+      "fairness_index": 0.9865824782951855,
+      "servers": [
+        {
+          "server": "Server1",
+          "bandwidth": 1000,
+          "avg_latency": 1.148956348156107,
+          "avg_time": 0.07733079482769144,
+          "total_requests": 29
+        },
+        {
+          "server": "Server2",
+          "bandwidth": 800,
+          "avg_latency": 1.1894642810026805,
+          "avg_time": 0.0960290531317393,
+          "total_requests": 24
+        },
+        {
+          "server": "Server3",
+          "bandwidth": 900,
+          "avg_latency": 1.1879659249232366,
+          "avg_time": 0.08671855926513672,
+          "total_requests": 26
+        },
+        {
+          "server": "Server4",
+          "bandwidth": 700,
+          "avg_latency": 1.1813688164665586,
+          "avg_time": 0.10561361766996838,
+          "total_requests": 21
+        }
+      ]
+    }
+  }
+}
