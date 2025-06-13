@@ -20,18 +20,18 @@ def round_robin(servers: list[Server]):
   return inner
 
 def weighted_round_robin(servers: list[Server]):
-    weights = [s.bandwidth for s in servers]
-    weighted_list = []
-    for i, w in enumerate(weights):
-        weighted_list.extend([i] * int(w))  # 가중치 비례로 인덱스 복제
-    idx = [0]
+  weights = [s.bandwidth for s in servers]
+  weighted_list = []
+  for i, w in enumerate(weights):
+    weighted_list.extend([i] * int(w))  # 가중치 비례로 인덱스 복제
+  idx = [0]
 
-    def inner(_):
-        server = servers[weighted_list[idx[0] % len(weighted_list)]]
-        idx[0] += 1
-        return server
+  def inner(_):
+    server = servers[weighted_list[idx[0] % len(weighted_list)]]
+    idx[0] += 1
+    return server
 
-    return inner
+  return inner
 
 def least_connections(servers: list[Server]):
   return min(servers, key=lambda s: len(s.pending_requests))
@@ -100,7 +100,7 @@ algorithm_map = {
   "Least Conn": least_connections,
   "Optimized": my_optimizer
 }
-request_sizes = list(np.random.uniform(500, 1000, 1000))  # 요청 크기(byte)
+request_sizes = list(np.random.uniform(50, 100, 100))  # 요청 크기(byte)
 
 metainfo = {
   "title": "로드밸런싱 알고리즘 비교",
@@ -146,8 +146,7 @@ data = {
   "summary": summary,
 }
 
-with open("./result.json", "w", encoding="utf-8") as f:
-  json.dump(data, f, ensure_ascii=False, indent=2)
+
 
 # 결과 출력
 text = []
@@ -174,21 +173,30 @@ plt.title("로드밸런싱 알고리즘 비교")
 plt.legend()
 
 for idx in range(len(servers)):
-  for bar, data in zip(bars, summary.values()):
+  for bar, server in zip(bars, summary.values()):
     height = bar[idx].get_height()
     plt.text(
       bar[idx].get_x() + bar[idx].get_width()/2,
       height + 0.005,
-      f"{data["servers"][idx]["avg_time"]:.2f}s\n{data["servers"][idx]["total_requests"]} req",
+      f"{server["servers"][idx]["avg_time"]:.2f}s\n{server["servers"][idx]["total_requests"]} req",
       ha='center', va='bottom', fontsize=7
     )
 plt.gcf().text(0.7, 0.5, "\n\n".join(text), fontsize=10, bbox=dict(facecolor='white', alpha=0.6))
 plt.tight_layout()
-i = 1
-while os.path.exists(f"./images/try{i}.png"):
-    i += 1
-filename = f"./images/try{i}.png"
-plt.savefig(filename)
+
+idx = 1
+while os.path.exists(f"./try/try{idx}"):
+  idx += 1
+folder = f"./try/try{idx}/"
+
+os.makedirs(folder, exist_ok=True)
+json_path = os.path.join(folder, "result.json")
+img_path = os.path.join(folder, "result.png")
+
+with open(json_path, "w", encoding="utf-8") as f:
+  json.dump(data, f, ensure_ascii=False, indent=2)
+
+plt.savefig(img_path)
 plt.close()
 
-print(f"결과 이미지가 {filename}에 저장되었습니다.")
+print(f"결과 이미지가 {folder}에 저장되었습니다.")
