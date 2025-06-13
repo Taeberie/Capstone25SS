@@ -1,3 +1,4 @@
+from threading import Event
 import time
 import numpy as np
 
@@ -11,13 +12,14 @@ class Server:
     self.total_latency = 0
     self.total_requests = 0
     self.total_time = 0
+    self.result = []  # 결과 저장용
 
-  def receive_request(self, size=1):
+  def receive_request(self, id, size):
     """요청이 서버에 도착하면 대기열에 추가 (요청 시간, 남은 처리 시간) 튜플로 저장"""
     processing_time = size / self.bandwidth
-    self.pending_requests.append([time.time(), processing_time])
+    self.pending_requests.append([time.time(), processing_time, id])
 
-  def process(self, stop_event):
+  def process(self, stop_event: Event):
     """요청들을 순차적으로 실제 처리 시간 기준으로 처리"""
     
     while not (stop_event.is_set() and not self.pending_requests):
@@ -26,15 +28,18 @@ class Server:
         continue
       start = time.time()
       
-      start_time, duration = self.pending_requests.pop(0)
+      # 대기 중인 요청 중 첫 번째 요청을 처리
+      start_time, duration, id = self.pending_requests.pop(0)
       time.sleep(duration)  # 실제 처리 시간만큼 대기
       elapsed = time.time() - start_time
+      elapsed = max(elapsed, 0)  # 음수 시간 방지
       
       self.max_latency = max(self.max_latency, elapsed)
       self.total_latency += elapsed
       self.total_requests += 1
       
       end = time.time()
+      self.result.append((id, self.name, elapsed, end - start))
       self.total_time += end - start
 
   def estimate_latency(self):
@@ -52,9 +57,12 @@ class Server:
     return self.total_time / self.total_requests
 
   def reset(self):
-    self.pending_requests = []
+    self.pending_requests = []  # 처리 중인 요청들 (각 요청은 남은 처리 시간)
+    self.max_latency = 0
     self.total_latency = 0
     self.total_requests = 0
+    self.total_time = 0
+    self.result = []  # 결과 저장용
 
 def calculate_metrics(servers: list[Server]):
   # 요청 수, 평균 응답 시간, 총 처리 시간 수집
