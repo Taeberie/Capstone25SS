@@ -106,9 +106,9 @@ endforeach()
 
 set(SIM_SOURCES
   ${CMAKE_CURRENT_SOURCE_DIR}/sim.cc
-  ${CMAKE_CURRENT_SOURCE_DIR}/request.cc
-  ${CMAKE_CURRENT_SOURCE_DIR}/route.cc
 )
+
+include_directories(SYSTEM /opt/homebrew/include)
 
 add_executable(scratch_sim ${SIM_SOURCES})
 target_link_libraries(scratch_sim ${ns3-libs})
