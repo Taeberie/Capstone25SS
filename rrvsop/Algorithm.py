@@ -56,6 +56,23 @@ def awfb_scheduling(servers: list[Server], alpha: float = 1.0, beta: float = 1.0
   probs = softmax(scores, beta)
   selected = random.choices(servers, weights=probs, k=1)[0]
   return selected
+
+def awfb_v2(servers, alpha=1.0, beta=1.0, w1=1.0, w2=0.5, w3=0.5):
+    def softmax(scores: list[float], beta: float = 1.0) -> list[float]:
+      max_score = max(scores)
+      exps = [math.exp(beta * (s - max_score)) for s in scores]
+      total = sum(exps)
+      return [x / total for x in exps]
+    
+    total_requests = sum(s.total_requests for s in servers) + 1e-6
+    scores = []
+    for s in servers:
+        latency = s.estimate_latency()
+        fairness_penalty = s.total_requests / total_requests
+        score = -(w1 * latency + w2 * len(s.pending_requests) + w3 * fairness_penalty)
+        scores.append(score)
+    probs = softmax(scores, beta)
+    return random.choices(servers, weights=probs, k=1)[0]
   
 def my_optimizer(servers: list[Server]):
   def cost(s: Server):
@@ -77,6 +94,7 @@ def get_algorithm_map(
   HybridLoadBalancing: bool,
   MyOptimizer: bool,
   AWFB: bool,
+  AWFBv2: bool,
   servers: list[Server]
   ):
   algorithm_map = {}
@@ -94,6 +112,8 @@ def get_algorithm_map(
     algorithm_map["My Optimizer"] = my_optimizer
   if AWFB:
     algorithm_map["AWFB"] = awfb_scheduling
+  if AWFBv2:
+    algorithm_map["AWFBv2"] = awfb_v2
   if not algorithm_map:
     raise ValueError("At least one algorithm must be selected.")
   return algorithm_map
