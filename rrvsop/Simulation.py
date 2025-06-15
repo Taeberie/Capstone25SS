@@ -1,45 +1,17 @@
-import os
+from Server import Server, calculate_metrics
+from Algorithm import get_algorithm_map
 import matplotlib.pyplot as plt
 from typing import Callable
-from Server import Server, calculate_metrics
 import numpy as np
 import matplotlib
 import threading
 import json
+import os
 
 # macOS에서 한글 폰트 설정 (윈도우는 'Malgun Gothic')
 matplotlib.rc('font', family='AppleGothic')
 plt.rcParams['axes.unicode_minus'] = False
 
-def round_robin(servers: list[Server]):
-  rr_index = [0]
-  def inner(_):
-    s = servers[rr_index[0] % len(servers)]
-    rr_index[0] += 1
-    return s
-  return inner
-
-def weighted_round_robin(servers: list[Server]):
-  weights = [s.bandwidth for s in servers]
-  weighted_list = []
-  for i, w in enumerate(weights):
-    weighted_list.extend([i] * int(w))  # 가중치 비례로 인덱스 복제
-  idx = [0]
-
-  def inner(_):
-    server = servers[weighted_list[idx[0] % len(weighted_list)]]
-    idx[0] += 1
-    return server
-
-  return inner
-
-def least_connections(servers: list[Server]):
-  return min(servers, key=lambda s: len(s.pending_requests))
-
-def my_optimizer(servers: list[Server]):
-  return min(servers, key=lambda s: s.estimate_latency())
-  
-# 전체 테스트 실행 함수
 def run_simulation(servers: list[Server], request_sizes: list[float], requests: list, algorithm: str):
   global algorithm_map
   select_fn: Callable[[list[Server]], Server] = algorithm_map[algorithm]
@@ -94,13 +66,8 @@ servers = [
   Server("Server3", 900),
   Server("Server4", 700)
 ]
-algorithm_map = {
-  "Round Robin": round_robin(servers),
-  "Weighted RR": weighted_round_robin(servers),
-  "Least Conn": least_connections,
-  "Optimized": my_optimizer
-}
-request_sizes = list(np.random.uniform(500, 1000, 1000))  # 요청 크기(byte)
+algorithm_map = get_algorithm_map(True, True, True, True, True, True, True, servers)
+request_sizes = list(np.random.uniform(50, 100, 100))  # 요청 크기(byte)
 
 metainfo = {
   "title": "로드밸런싱 알고리즘 비교",
@@ -127,9 +94,9 @@ for algorithm in algorithm_map.keys():
     "throughput": throughput,
     "fairness_index": fairness_index
   }
-  sub = []
+  summary[algorithm]["servers"] = []
   for s, res in zip(servers, result):
-    sub.append(
+    summary[algorithm]["servers"].append(
       {
         "server": s.name,
         "bandwidth": s.bandwidth,
@@ -138,7 +105,6 @@ for algorithm in algorithm_map.keys():
         "total_requests": res[2]
       }
     )
-  summary[algorithm]["servers"] = sub
 
 data = {
   "metainfo": metainfo,
@@ -154,13 +120,15 @@ for algorithm, res in summary.items():
 
 # 시각화
 x = np.arange(len(servers))
-width = 0.2
+num_algorithms = len(summary)
+width = 0.8 / num_algorithms  # 전체 너비 안에서 균등 분배
+offsets = np.linspace(-width * (num_algorithms - 1) / 2, width * (num_algorithms - 1) / 2, num_algorithms)
+
 labels = [f"{s.name}\n처리속도: {s.bandwidth} bytes/sec" for s in servers]
 
 plt.figure(figsize=(14, 7))
 
 bars = []
-offsets = np.linspace(-1.5, 1.5, len(summary)) * width
 for idx, (algorithm, res) in enumerate(summary.items()):
   bar = plt.bar(x + offsets[idx], [s["avg_latency"] for s in res["servers"]], width, label=algorithm)
   bars.append(bar)
@@ -170,16 +138,24 @@ plt.ylabel("평균 처리 시간 (s)")
 plt.title("로드밸런싱 알고리즘 비교")
 plt.legend()
 
+def get_fontsize_by_algorithm_count(n):
+  if n <= 3: return 8
+  elif n <= 5: return 7
+  elif n <= 7: return 6
+  elif n <= 9: return 5
+  return 4
+
+fontsize = get_fontsize_by_algorithm_count(num_algorithms)
 for idx in range(len(servers)):
   for bar, server in zip(bars, summary.values()):
     height = bar[idx].get_height()
     plt.text(
       bar[idx].get_x() + bar[idx].get_width()/2,
-      height + 0.005,
+      height + height * 0.02 + 0.01,
       f"{server["servers"][idx]["avg_time"]:.2f}s\n{server["servers"][idx]["total_requests"]} req",
-      ha='center', va='bottom', fontsize=7
+      ha='center', va='bottom', fontsize=fontsize
     )
-plt.gcf().text(0.7, 0.5, "\n\n".join(text), fontsize=10, bbox=dict(facecolor='white', alpha=0.6))
+plt.gcf().text(0.7, 0.5, "\n\n".join(text), fontsize=fontsize, bbox=dict(facecolor='white', alpha=0.6))
 plt.tight_layout()
 
 idx = 1
@@ -197,4 +173,4 @@ with open(json_path, "w", encoding="utf-8") as f:
 plt.savefig(img_path)
 plt.close()
 
-print(f"결과 이미지가 {folder}에 저장되었습니다.")
+print(f"결과가 {folder}에 저장되었습니다.")
