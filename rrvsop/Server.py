@@ -75,7 +75,7 @@ def calculate_metrics(servers: list[Server]):
   average_latency = total_latency / total_requests if total_requests > 0 else 0
 
   # 전체 처리량 (총 요청 수 / 평균 시간)
-  total_elapsed_time = max(total_times)
+  total_elapsed_time = sum(total_times)
   throughput = total_requests / total_elapsed_time if total_elapsed_time > 0 else 0
 
   # Jain’s Fairness Index
