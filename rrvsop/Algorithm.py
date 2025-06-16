@@ -2,38 +2,39 @@ import math
 import random
 import numpy as np
 from Server import Server
+from typing import Callable
 
 algorithm = []
 
-def round_robin(servers: list[Server]):
+def round_robin(servers: list[Server]) -> Callable[[list[Server]], Server]:
   rr_index = [0]
-  def inner(_):
+  def inner(_) -> Server:
     s = servers[rr_index[0] % len(servers)]
     rr_index[0] += 1
     return s
   return inner
 
-def weighted_round_robin(servers: list[Server]):
+def weighted_round_robin(servers: list[Server]) -> Callable[[list[Server]],Server]:
   weights = [s.bandwidth for s in servers]
   weighted_list = []
   for i, w in enumerate(weights):
     weighted_list.extend([i] * int(w))  # 가중치 비례로 인덱스 복제
   idx = [0]
 
-  def inner(_):
+  def inner(_) -> Server:
     server = servers[weighted_list[idx[0] % len(weighted_list)]]
     idx[0] += 1
     return server
 
   return inner
 
-def least_connections(servers: list[Server]):
+def least_connections(servers: list[Server]) -> Server:
   return min(servers, key=lambda s: len(s.pending_requests))
 
-def min_latency_scheduling(servers: list[Server]):
+def min_latency_scheduling(servers: list[Server]) -> Server:
   return min(servers, key=lambda s: s.estimate_latency())
 
-def hybrid_load_balancing(servers: list[Server]):
+def hybrid_load_balancing(servers: list[Server]) -> Server:
   weighted_score = []
   for srv in servers:
     # 연결수 가중치(40%) + 응답시간 가중치(60%)
@@ -74,8 +75,8 @@ def awfb_v2(servers, alpha=1.0, beta=1.0, w1=1.0, w2=0.5, w3=0.5):
     probs = softmax(scores, beta)
     return random.choices(servers, weights=probs, k=1)[0]
   
-def my_optimizer(servers: list[Server]):
-  def cost(s: Server):
+def my_optimizer(servers: list[Server]) -> Server:
+  def cost(s: Server) -> float:
     # 가중치를 적절히 조절 (ex: latency 중심이면 w1 높게)
     w1 = 0.6  # 대기 시간
     w2 = 0.4  # 요청 수 기반 공정성

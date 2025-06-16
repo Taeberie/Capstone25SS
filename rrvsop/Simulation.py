@@ -66,6 +66,7 @@ servers = [
   Server("Server3", 900),
   Server("Server4", 700)
 ]
+
 algorithm_map = get_algorithm_map(True, True, True, True, True, True, True, True, servers)
 request_sizes = list(np.random.uniform(50, 100, 100))  # 요청 크기(byte)
 
