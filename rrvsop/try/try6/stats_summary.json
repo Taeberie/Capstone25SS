@@ -1,0 +1,176 @@
+{
+  "uniform": {
+    "Round Robin": {
+      "average_latency_mean": 5.881201280593872,
+      "average_latency_std": 0.057937027804559865,
+      "throughput_mean": 2.219926258675785,
+      "throughput_std": 0.03214322099938076,
+      "fairness_index_mean": 1.0,
+      "fairness_index_std": 0.0
+    },
+    "Least Conn": {
+      "average_latency_mean": 5.881509746074676,
+      "average_latency_std": 0.060819777459731314,
+      "throughput_mean": 2.2199200834774113,
+      "throughput_std": 0.03369331538677588,
+      "fairness_index_mean": 1.0,
+      "fairness_index_std": 0.0
+    },
+    "MLS": {
+      "average_latency_mean": 5.774129873752594,
+      "average_latency_std": 0.053297681360430005,
+      "throughput_mean": 2.2590301954416527,
+      "throughput_std": 0.034982355462321854,
+      "fairness_index_mean": 0.9845943520399233,
+      "fairness_index_std": 0.006316446220087788
+    },
+    "HLB": {
+      "average_latency_mean": 5.879291566848755,
+      "average_latency_std": 0.058549005745522124,
+      "throughput_mean": 2.2202283907665272,
+      "throughput_std": 0.0320916956847678,
+      "fairness_index_mean": 1.0,
+      "fairness_index_std": 0.0
+    },
+    "My Optimizer": {
+      "average_latency_mean": 5.776966482162476,
+      "average_latency_std": 0.052157015854738524,
+      "throughput_mean": 2.2575653330121503,
+      "throughput_std": 0.034779789585390505,
+      "fairness_index_mean": 0.9845943520399233,
+      "fairness_index_std": 0.006316446220087788
+    },
+    "AWFB": {
+      "average_latency_mean": 6.091590312004089,
+      "average_latency_std": 0.25513830444876956,
+      "throughput_mean": 2.220930289684821,
+      "throughput_std": 0.02049229633949896,
+      "fairness_index_mean": 0.9658337660867835,
+      "fairness_index_std": 0.029361887967895635
+    },
+    "AWFBv2": {
+      "average_latency_mean": 5.803841575622559,
+      "average_latency_std": 0.04707107464152359,
+      "throughput_mean": 2.2393715575812903,
+      "throughput_std": 0.03291294746948337,
+      "fairness_index_mean": 0.995232240531947,
+      "fairness_index_std": 0.0033985406493731237
+    }
+  },
+  "normal": {
+    "Round Robin": {
+      "average_latency_mean": 6.024787501811981,
+      "average_latency_std": 0.15052643744101954,
+      "throughput_mean": 2.16220589906595,
+      "throughput_std": 0.05381451728725597,
+      "fairness_index_mean": 1.0,
+      "fairness_index_std": 0.0
+    },
+    "Least Conn": {
+      "average_latency_mean": 6.026374358177185,
+      "average_latency_std": 0.15452017062417153,
+      "throughput_mean": 2.1619756167256576,
+      "throughput_std": 0.05422868624463926,
+      "fairness_index_mean": 1.0,
+      "fairness_index_std": 0.0
+    },
+    "MLS": {
+      "average_latency_mean": 5.8991908960342405,
+      "average_latency_std": 0.15750825995933648,
+      "throughput_mean": 2.2058690158040246,
+      "throughput_std": 0.06082621579556165,
+      "fairness_index_mean": 0.9828597667653496,
+      "fairness_index_std": 0.0010079572677033355
+    },
+    "HLB": {
+      "average_latency_mean": 6.022527575016022,
+      "average_latency_std": 0.14873327636226635,
+      "throughput_mean": 2.1631062726436947,
+      "throughput_std": 0.05300350852401073,
+      "fairness_index_mean": 0.9996802557953637,
+      "fairness_index_std": 0.0004378277837770882
+    },
+    "My Optimizer": {
+      "average_latency_mean": 5.899398347854614,
+      "average_latency_std": 0.15829381062818518,
+      "throughput_mean": 2.205811063873692,
+      "throughput_std": 0.061089260102626004,
+      "fairness_index_mean": 0.9828597667653496,
+      "fairness_index_std": 0.0010079572677033355
+    },
+    "AWFB": {
+      "average_latency_mean": 6.2563357014656065,
+      "average_latency_std": 0.1377677209628552,
+      "throughput_mean": 2.1606936093542615,
+      "throughput_std": 0.06413793894012773,
+      "fairness_index_mean": 0.9634836112685651,
+      "fairness_index_std": 0.01425682691734432
+    },
+    "AWFBv2": {
+      "average_latency_mean": 5.93670001745224,
+      "average_latency_std": 0.1436141126796423,
+      "throughput_mean": 2.186319534994907,
+      "throughput_std": 0.05680816544023672,
+      "fairness_index_mean": 0.9963359267230645,
+      "fairness_index_std": 0.0017422543284188656
+    }
+  },
+  "exponential": {
+    "Round Robin": {
+      "average_latency_mean": 0.6785356225967407,
+      "average_latency_std": 0.0409883798662417,
+      "throughput_mean": 19.4610809301222,
+      "throughput_std": 1.3028885126772414,
+      "fairness_index_mean": 1.0,
+      "fairness_index_std": 0.0
+    },
+    "Least Conn": {
+      "average_latency_mean": 0.6821524209976196,
+      "average_latency_std": 0.037459761470059284,
+      "throughput_mean": 19.3854981024122,
+      "throughput_std": 1.3502938026276547,
+      "fairness_index_mean": 1.0,
+      "fairness_index_std": 0.0
+    },
+    "MLS": {
+      "average_latency_mean": 0.6473007860183716,
+      "average_latency_std": 0.02790936128861945,
+      "throughput_mean": 19.898072712634328,
+      "throughput_std": 1.134814631999986,
+      "fairness_index_mean": 0.9669872453717027,
+      "fairness_index_std": 0.025537084171028707
+    },
+    "HLB": {
+      "average_latency_mean": 0.6800420536994934,
+      "average_latency_std": 0.0339597717355968,
+      "throughput_mean": 19.39868010742706,
+      "throughput_std": 1.2250048310875763,
+      "fairness_index_mean": 1.0,
+      "fairness_index_std": 0.0
+    },
+    "My Optimizer": {
+      "average_latency_mean": 0.6431714425086975,
+      "average_latency_std": 0.028661940949941126,
+      "throughput_mean": 20.036300637871125,
+      "throughput_std": 1.355924221077591,
+      "fairness_index_mean": 0.9669872453717027,
+      "fairness_index_std": 0.025537084171028707
+    },
+    "AWFB": {
+      "average_latency_mean": 0.6942554087638855,
+      "average_latency_std": 0.05708040513561209,
+      "throughput_mean": 19.6617306373674,
+      "throughput_std": 1.5448863858996056,
+      "fairness_index_mean": 0.9694477792462981,
+      "fairness_index_std": 0.019084483643089067
+    },
+    "AWFBv2": {
+      "average_latency_mean": 0.6694417157173157,
+      "average_latency_std": 0.03405505258059542,
+      "throughput_mean": 19.66021465363007,
+      "throughput_std": 1.4318441101672943,
+      "fairness_index_mean": 0.998881916219292,
+      "fairness_index_std": 0.0009099006244857069
+    }
+  }
+}
