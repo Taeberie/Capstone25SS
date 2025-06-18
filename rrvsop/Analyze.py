@@ -1,58 +1,38 @@
 import json
-import matplotlib.pyplot as plt
-import os
 
-# macOS에서 한글 폰트 설정 (윈도우는 'Malgun Gothic')
-plt.rc('font', family='AppleGothic')
-plt.rcParams['axes.unicode_minus'] = False
+# 결과 파일 로드
+with open("./try/try13/result.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
 
-folder = "special_statistic_try/try2/"
+summary = data["summary"]
 
-json_path = os.path.join(folder, "stats_summary.json")
+best_algo = None
+best_score = float("inf")
+algorithm = []
 
-with open(json_path, "r", encoding="utf-8") as f:
-    stats = json.load(f)
+for algo, res in summary.items():
+    latency = res["average_latency"]
+    throughput = res["throughput"]
+    fairness = res["fairness_index"]
 
-metrics = ["average_latency_mean", "throughput_mean", "fairness_index_mean"]
-metric_labels = {
-    "average_latency_mean": "평균 지연 시간 (s)",
-    "throughput_mean": "초당 처리량 (req/s)",
-    "fairness_index_mean": "공정성 (Jain Index)"
-}
+    # 점수 계산: 낮을수록 좋음 (가중치는 상황에 따라 조정 가능)
+    score = latency - throughput + (1 - fairness)
 
-distributions = [d for d in stats.keys()]
-algorithms = list(next(iter(stats.values())).keys())
+    algorithm.append((algo, latency, throughput, fairness, score))
+    if score < best_score:
+        best_score = score
+        best_algo = algo
 
-visualize_folder = os.path.join(folder, "visualize")
-os.makedirs(visualize_folder, exist_ok=True)
+algorithm.sort(key=lambda x: x[4])  # 점수 기준으로 정렬
+print(f"✅ 알고리즘 비교 결과:")
+for algo, latency, throughput, fairness, score in algorithm:
+    print(f"  - {algo}: 평균 응답 시간 = {latency:.3f} s, 초당 처리량 = {throughput:.2f} req/s, 공정성 = {fairness:.4f}, 점수 = {score:.4f}")
 
-for metric in metrics:
-    plt.figure(figsize=(12, 6))
-
-    for alg in algorithms:
-        y_values = [stats[dist][alg][metric] for dist in distributions]
-        plt.plot(distributions, y_values, marker='o', label=alg)
-
-    plt.title(f"요청 분포별 알고리즘 {metric_labels[metric]} 변화")
-    plt.xlabel("요청 분포 유형")
-    plt.ylabel(metric_labels[metric])
-    plt.legend()
-    plt.grid(True)
-    plt.tight_layout()
-    plt.savefig(os.path.join(visualize_folder, f"{metric}_lineplot_special.png"))
-    plt.close()
-
-
-for metric in metrics:
-    plt.figure(figsize=(12, 6))
-
-    data = {alg: [stats[dist][alg][metric] for dist in distributions] for alg in algorithms}
-    plt.boxplot(data.values(), tick_labels=data.keys())
-
-    plt.title(f"요청 분포별 알고리즘 {metric_labels[metric]} 분포(Box Plot)")
-    plt.xlabel("알고리즘")
-    plt.ylabel(metric_labels[metric])
-    plt.grid(True)
-    plt.tight_layout()
-    plt.savefig(os.path.join(visualize_folder, f"{metric}_boxplot_special.png"))
-    plt.close()
+print("\n✅ 알고리즘 비교 결과 (점수 기준):")
+for idx, (algo, latency, throughput, fairness, score) in enumerate(algorithm, start=1):
+    print(f"{algo} (점수: {score:.4f})", end="")
+    if idx < len(algorithm):
+        print(" -> ", end="")
+    else:
+        print()
+print(f"\n최고의 알고리즘은 '{best_algo}'입니다. (점수: {best_score:.4f})")

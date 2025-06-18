@@ -1,0 +1,2828 @@
+{
+  "metainfo": {
+    "title": "로드밸런싱 알고리즘 비교",
+    "description": "서버별 로드밸런싱 알고리즘의 성능을 여러 요청 분포에 대해 비교",
+    "servers": [
+      {
+        "name": "Server1",
+        "bandwidth": 2000
+      },
+      {
+        "name": "Server2",
+        "bandwidth": 1600
+      },
+      {
+        "name": "Server3",
+        "bandwidth": 1800
+      },
+      {
+        "name": "Server4",
+        "bandwidth": 1400
+      }
+    ],
+    "total_request": 10,
+    "algorithms": [
+      "RR",
+      "LC",
+      "MLS",
+      "AWFB",
+      "MFO"
+    ],
+    "distributions": [
+      "bursty",
+      "server_specific",
+      "dynamic"
+    ]
+  },
+  "summary_runs": {
+    "bursty": {
+      "RR": [
+        {
+          "average_latency": 0.5608440160751342,
+          "throughput": 4.047735497630789,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5207881927490234,
+              "avg_time": 0.1732346216837565,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.1557903289794922,
+              "avg_time": 0.45886770884195965,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.28822028636932373,
+              "avg_time": 0.2871025800704956,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.0011320114135742188,
+              "avg_time": 2.5033950805664062e-06,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.5500560283660889,
+          "throughput": 4.361265906574813,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.22238409519195557,
+              "avg_time": 0.22131967544555664,
+              "total_requests": 2
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.0010454654693603516,
+              "avg_time": 2.658367156982422e-05,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5340516567230225,
+              "avg_time": 0.17765251795450845,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 1.1505153973897297,
+              "avg_time": 0.4390873908996582,
+              "total_requests": 3
+            }
+          ]
+        },
+        {
+          "average_latency": 0.46473495960235595,
+          "throughput": 4.716110500557369,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.4856270949045817,
+              "avg_time": 0.16162705421447754,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.882394552230835,
+              "avg_time": 0.36544068654378253,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.2706092596054077,
+              "avg_time": 0.26957905292510986,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.0010330677032470703,
+              "avg_time": 1.5020370483398438e-05,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.5921272516250611,
+          "throughput": 3.969760078806425,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.2546260356903076,
+              "avg_time": 0.25416338443756104,
+              "total_requests": 2
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.0006464719772338867,
+              "avg_time": 7.867813110351562e-06,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5764156977335612,
+              "avg_time": 0.1919097105662028,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 1.227160135904948,
+              "avg_time": 0.47832409540812176,
+              "total_requests": 3
+            }
+          ]
+        },
+        {
+          "average_latency": 0.6129552125930786,
+          "throughput": 3.662743576843882,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6459739208221436,
+              "avg_time": 0.21505475044250488,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.185140053431193,
+              "avg_time": 0.4842522144317627,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.31708860397338867,
+              "avg_time": 0.3161299228668213,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.0010164976119995117,
+              "avg_time": 6.556510925292969e-06,
+              "total_requests": 2
+            }
+          ]
+        }
+      ],
+      "LC": [
+        {
+          "average_latency": 0.5614508390426636,
+          "throughput": 4.04105312193047,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5207591851552328,
+              "avg_time": 0.17325202624003092,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.1574798425038655,
+              "avg_time": 0.4597535928090413,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.2888305187225342,
+              "avg_time": 0.287788987159729,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.0010651350021362305,
+              "avg_time": 3.814697265625e-06,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.49469423294067383,
+          "throughput": 4.7174100529112435,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.47810665766398114,
+              "avg_time": 0.15918509165445963,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.0061155954996746,
+              "avg_time": 0.38397399584452313,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.24606859683990479,
+              "avg_time": 0.24515748023986816,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.001069188117980957,
+              "avg_time": 7.510185241699219e-06,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.46516993045806887,
+          "throughput": 4.7131004132260195,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.4860529899597168,
+              "avg_time": 0.1617878278096517,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8841946125030518,
+              "avg_time": 0.3664437135060628,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.269484281539917,
+              "avg_time": 0.2685204744338989,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.000993967056274414,
+              "avg_time": 5.0067901611328125e-06,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.5353868246078491,
+          "throughput": 4.272263843387756,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5193040370941162,
+              "avg_time": 0.17288732528686523,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.0767549673716228,
+              "avg_time": 0.41994500160217285,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.28194546699523926,
+              "avg_time": 0.2810862064361572,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.0009001493453979492,
+              "avg_time": 5.0067901611328125e-06,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.6107351303100585,
+          "throughput": 3.677398561482103,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.644095261891683,
+              "avg_time": 0.21439663569132486,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.1811328728993733,
+              "avg_time": 0.4828837712605794,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.314736008644104,
+              "avg_time": 0.3137320280075073,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.0010974407196044922,
+              "avg_time": 4.172325134277344e-06,
+              "total_requests": 2
+            }
+          ]
+        }
+      ],
+      "MLS": [
+        {
+          "average_latency": 0.41106429100036623,
+          "throughput": 3.9140362995422384,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5166471600532532,
+              "avg_time": 0.12899339199066162,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7110569477081299,
+              "avg_time": 0.7102150917053223,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.14855027198791504,
+              "avg_time": 0.14769315719604492,
+              "total_requests": 4
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7387962341308594,
+              "avg_time": 0.7379460334777832,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.34131479263305664,
+          "throughput": 4.501284393587648,
+          "fairness_index": 0.4807692307692308,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.4810810089111328,
+              "avg_time": 0.48018407821655273,
+              "total_requests": 1
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7135958671569824,
+              "avg_time": 0.7126891613006592,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.22610385077340261,
+              "avg_time": 0.056294849940708706,
+              "total_requests": 7
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6357440948486328,
+              "avg_time": 0.6346509456634521,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.35630953311920166,
+          "throughput": 4.537085334074676,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.48554372787475586,
+              "avg_time": 0.484879732131958,
+              "total_requests": 1
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.45111870765686035,
+              "avg_time": 0.11258655786514282,
+              "total_requests": 4
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.14515244960784912,
+              "avg_time": 0.1442973017692566,
+              "total_requests": 4
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6924669742584229,
+              "avg_time": 0.6916429996490479,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.3912022113800049,
+          "throughput": 4.1075476642733495,
+          "fairness_index": 0.4807692307692308,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5178670883178711,
+              "avg_time": 0.5171499252319336,
+              "total_requests": 1
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7043581008911133,
+              "avg_time": 0.7036399841308594,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.28071883746555876,
+              "avg_time": 0.07000109127589635,
+              "total_requests": 7
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7247650623321533,
+              "avg_time": 0.7237451076507568,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.47491214275360105,
+          "throughput": 3.547940245986229,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6416840553283691,
+              "avg_time": 0.16030627489089966,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6483020782470703,
+              "avg_time": 0.6477310657501221,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.18042856454849243,
+              "avg_time": 0.17954891920089722,
+              "total_requests": 4
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8123688697814941,
+              "avg_time": 0.811384916305542,
+              "total_requests": 1
+            }
+          ]
+        }
+      ],
+      "AWFB": [
+        {
+          "average_latency": 0.4283659219741821,
+          "throughput": 4.0584792797911575,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.3574804464975993,
+              "avg_time": 0.1786502997080485,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.0314855575561523,
+              "avg_time": 0.6773364543914795,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5736430883407593,
+              "avg_time": 0.28666937351226807,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.00032019615173339844,
+              "avg_time": 4.8478444417317706e-06,
+              "total_requests": 3
+            }
+          ]
+        },
+        {
+          "average_latency": 0.3807777166366577,
+          "throughput": 4.510579036146003,
+          "fairness_index": 0.8333333333333334,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.23723602294921875,
+              "avg_time": 0.11839056015014648,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.5957059860229492,
+              "avg_time": 0.2975858449935913,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6332669258117676,
+              "avg_time": 0.6324348449707031,
+              "total_requests": 1
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.3178475499153137,
+              "avg_time": 0.15855801105499268,
+              "total_requests": 4
+            }
+          ]
+        },
+        {
+          "average_latency": 0.3443199872970581,
+          "throughput": 4.414808683385586,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.3214250405629476,
+              "avg_time": 0.16055798530578613,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.0005336602528889974,
+              "avg_time": 6.9141387939453125e-06,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.28929638862609863,
+              "avg_time": 0.28856658935546875,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.949365496635437,
+              "avg_time": 0.6031379699707031,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.5616020679473877,
+          "throughput": 4.013966903346587,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.00044663747151692707,
+              "avg_time": 6.5962473551432294e-06,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.649794340133667,
+              "avg_time": 0.32454395294189453,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.955175002415975,
+              "avg_time": 0.37274010976155597,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7247835397720337,
+              "avg_time": 0.36198651790618896,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.6138107538223266,
+          "throughput": 3.5086528786770006,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6458044846852621,
+              "avg_time": 0.21506889661153158,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7080670992533366,
+              "avg_time": 0.2358671029408773,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.576959490776062,
+              "avg_time": 0.2882128953933716,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.46128690242767334,
+              "avg_time": 0.46043145656585693,
+              "total_requests": 2
+            }
+          ]
+        }
+      ],
+      "MFO": [
+        {
+          "average_latency": 0.41156132221221925,
+          "throughput": 3.9138854572554713,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5180107951164246,
+              "avg_time": 0.1292765736579895,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.16821354627609253,
+              "avg_time": 0.16708403825759888,
+              "total_requests": 4
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6314549446105957,
+              "avg_time": 0.6309812068939209,
+              "total_requests": 1
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7392609119415283,
+              "avg_time": 0.7385821342468262,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.3501861572265625,
+          "throughput": 4.586291590461817,
+          "fairness_index": 0.4807692307692308,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.48075270652770996,
+              "avg_time": 0.4801628589630127,
+              "total_requests": 1
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.2510411058153425,
+              "avg_time": 0.06257861001150948,
+              "total_requests": 7
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6318871974945068,
+              "avg_time": 0.6310319900512695,
+              "total_requests": 1
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6319339275360107,
+              "avg_time": 0.6311657428741455,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.3439182281494141,
+          "throughput": 4.495275747601595,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.4864931106567383,
+              "avg_time": 0.48589372634887695,
+              "total_requests": 1
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.16277819871902466,
+              "avg_time": 0.16218918561935425,
+              "total_requests": 4
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.40337860584259033,
+              "avg_time": 0.10065257549285889,
+              "total_requests": 4
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6880619525909424,
+              "avg_time": 0.6872968673706055,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.39863603115081786,
+          "throughput": 4.12897331964984,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.519629716873169,
+              "avg_time": 0.12977558374404907,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.13873028755187988,
+              "avg_time": 0.13792777061462402,
+              "total_requests": 4
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6303660869598389,
+              "avg_time": 0.6294741630554199,
+              "total_requests": 1
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7225542068481445,
+              "avg_time": 0.7216219902038574,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.4571548938751221,
+          "throughput": 3.5271707010067432,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.645625114440918,
+              "avg_time": 0.6449649333953857,
+              "total_requests": 1
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.2022300362586975,
+              "avg_time": 0.20151656866073608,
+              "total_requests": 4
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5770894885063171,
+              "avg_time": 0.14410161972045898,
+              "total_requests": 4
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8086457252502441,
+              "avg_time": 0.8076958656311035,
+              "total_requests": 1
+            }
+          ]
+        }
+      ]
+    },
+    "server_specific": {
+      "RR": [
+        {
+          "average_latency": 0.962568211555481,
+          "throughput": 2.143476821056677,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.1586833000183105,
+              "avg_time": 0.3782042503356934,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.48874592781066895,
+              "avg_time": 0.48781800270080566,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.7015808820724487,
+              "avg_time": 0.4829070568084717,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.9701789617538452,
+              "avg_time": 0.6603320837020874,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7457054138183594,
+          "throughput": 2.691781465007227,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8744755744934082,
+              "avg_time": 0.31287469863891604,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6355636119842529,
+              "avg_time": 0.4109039306640625,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.67221999168396,
+              "avg_time": 0.4303346872329712,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.46910905838012695,
+              "avg_time": 0.46816110610961914,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8240385532379151,
+          "throughput": 2.5461058209691645,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.0150362968444824,
+              "avg_time": 0.34755945205688477,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6599944829940796,
+              "avg_time": 0.4324289560317993,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.37311530113220215,
+              "avg_time": 0.37233781814575195,
+              "total_requests": 1
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7360498905181885,
+              "avg_time": 0.47628676891326904,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.9105084419250489,
+          "throughput": 2.3810512936306387,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.1511085033416748,
+              "avg_time": 0.3600050926208496,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.5958890914916992,
+              "avg_time": 0.5950031280517578,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6502889394760132,
+              "avg_time": 0.40978455543518066,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7265374660491943,
+              "avg_time": 0.49261391162872314,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 1.1553692102432251,
+          "throughput": 2.290081520774732,
+          "fairness_index": 0.5952380952380952,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.4896249771118164,
+              "avg_time": 0.39593478043874103,
+              "total_requests": 6
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8485826253890991,
+              "avg_time": 0.5370460748672485,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.4783480167388916,
+              "avg_time": 0.47756099700927734,
+              "total_requests": 1
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.4404289722442627,
+              "avg_time": 0.4393949508666992,
+              "total_requests": 1
+            }
+          ]
+        }
+      ],
+      "LC": [
+        {
+          "average_latency": 0.8565523386001587,
+          "throughput": 2.1214264218318104,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9553890228271484,
+              "avg_time": 0.3808494210243225,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8381459712982178,
+              "avg_time": 0.5668474435806274,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.7264626026153564,
+              "avg_time": 0.5004125833511353,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8073750734329224,
+              "avg_time": 0.527945876121521,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7722325325012207,
+          "throughput": 2.7085676816127995,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9521978855133056,
+              "avg_time": 0.3281430721282959,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7277953624725342,
+              "avg_time": 0.45716309547424316,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5556685924530029,
+              "avg_time": 0.3717494010925293,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.3944079875946045,
+              "avg_time": 0.3934478759765625,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7390858411788941,
+          "throughput": 2.5353882876694276,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9166920185089111,
+              "avg_time": 0.35809171199798584,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.5156855583190918,
+              "avg_time": 0.3525329828262329,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.632001519203186,
+              "avg_time": 0.4293076992034912,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7143580913543701,
+              "avg_time": 0.47406041622161865,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8185310363769531,
+          "throughput": 2.2922526111012953,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8896464705467224,
+              "avg_time": 0.3315699100494385,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8378027677536011,
+              "avg_time": 0.5672265291213989,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5344785451889038,
+              "avg_time": 0.35151219367980957,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.9410809278488159,
+              "avg_time": 0.5993819236755371,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 1.001392912864685,
+          "throughput": 2.276404637689025,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.3285729885101318,
+              "avg_time": 0.42572860717773436,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7811040878295898,
+              "avg_time": 0.46994638442993164,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6842695474624634,
+              "avg_time": 0.44249868392944336,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.44031691551208496,
+              "avg_time": 0.4393589496612549,
+              "total_requests": 1
+            }
+          ]
+        }
+      ],
+      "MLS": [
+        {
+          "average_latency": 0.8571003913879395,
+          "throughput": 2.1218638631089255,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9609350562095642,
+              "avg_time": 0.38231873512268066,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8443238735198975,
+              "avg_time": 0.5756329298019409,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.712677001953125,
+              "avg_time": 0.4884895086288452,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8066309690475464,
+              "avg_time": 0.5276589393615723,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7630694389343262,
+          "throughput": 2.6651431845110616,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9506936550140381,
+              "avg_time": 0.3277156829833984,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.5384140014648438,
+              "avg_time": 0.5377740859985352,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5305709838867188,
+              "avg_time": 0.3475019931793213,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.638835072517395,
+              "avg_time": 0.4403935670852661,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7384120464324951,
+          "throughput": 2.5399733703639535,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9154862761497498,
+              "avg_time": 0.3574652671813965,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.5152086019515991,
+              "avg_time": 0.35145461559295654,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6301840543746948,
+              "avg_time": 0.42742347717285156,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7156950235366821,
+              "avg_time": 0.4747159481048584,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8138506412506104,
+          "throughput": 2.3083166959276245,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8871669769287109,
+              "avg_time": 0.33146893978118896,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7269964218139648,
+              "avg_time": 0.45819854736328125,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6282753944396973,
+              "avg_time": 0.44560956954956055,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.9396474361419678,
+              "avg_time": 0.5993345975875854,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.9877990245819092,
+          "throughput": 2.255043250519458,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.3310297966003417,
+              "avg_time": 0.4263903141021729,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6199190616607666,
+              "avg_time": 0.6191041469573975,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6840111017227173,
+              "avg_time": 0.4425084590911865,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6174499988555908,
+              "avg_time": 0.39921605587005615,
+              "total_requests": 2
+            }
+          ]
+        }
+      ],
+      "AWFB": [
+        {
+          "average_latency": 0.8604958057403564,
+          "throughput": 2.1136850329593044,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.971568763256073,
+              "avg_time": 0.3854222297668457,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7026650905609131,
+              "avg_time": 0.4594287872314453,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.7466518878936768,
+              "avg_time": 0.505139946937561,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.9100245237350464,
+              "avg_time": 0.6301237344741821,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8434882402420044,
+          "throughput": 2.7321314519861395,
+          "fairness_index": 0.5952380952380952,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.0451802810033162,
+              "avg_time": 0.31602001190185547,
+              "total_requests": 6
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.37456679344177246,
+              "avg_time": 0.3740260601043701,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5865544080734253,
+              "avg_time": 0.3874164819717407,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6161251068115234,
+              "avg_time": 0.6151669025421143,
+              "total_requests": 1
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7249542951583863,
+          "throughput": 2.478995522823576,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.7399404843648275,
+              "avg_time": 0.3575272560119629,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8780165513356527,
+              "avg_time": 0.44817352294921875,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5877923965454102,
+              "avg_time": 0.3849678039550781,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6100435256958008,
+              "avg_time": 0.4234269857406616,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8158102750778198,
+          "throughput": 2.2983992650477663,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8861172199249268,
+              "avg_time": 0.3304448127746582,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8333379030227661,
+              "avg_time": 0.5648500919342041,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5322790145874023,
+              "avg_time": 0.350447416305542,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.9412000179290771,
+              "avg_time": 0.5992399454116821,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.9181657552719116,
+          "throughput": 2.1931546012253897,
+          "fairness_index": 0.8333333333333334,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.0392143726348877,
+              "avg_time": 0.40848857164382935,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.5417029857635498,
+              "avg_time": 0.5410969257354736,
+              "total_requests": 1
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.8761569658915201,
+              "avg_time": 0.4130105972290039,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.9273130893707275,
+              "avg_time": 0.5727795362472534,
+              "total_requests": 2
+            }
+          ]
+        }
+      ],
+      "MFO": [
+        {
+          "average_latency": 0.8585381507873535,
+          "throughput": 2.118025458598305,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9625140428543091,
+              "avg_time": 0.3833703398704529,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8151870965957642,
+              "avg_time": 0.561969518661499,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.7459709644317627,
+              "avg_time": 0.5043470859527588,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8065046072006226,
+              "avg_time": 0.5276319980621338,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7735436439514161,
+          "throughput": 2.6374718727786854,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9560224056243897,
+              "avg_time": 0.3294485569000244,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6254333257675171,
+              "avg_time": 0.41876041889190674,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.48377490043640137,
+              "avg_time": 0.4828779697418213,
+              "total_requests": 1
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6103414297103882,
+              "avg_time": 0.4119340181350708,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7431343078613282,
+          "throughput": 2.517858299514696,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.9165202379226685,
+              "avg_time": 0.3584517240524292,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7098740339279175,
+              "avg_time": 0.48234331607818604,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.45816493034362793,
+              "avg_time": 0.31269800662994385,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7145920991897583,
+              "avg_time": 0.4738699197769165,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8157424688339233,
+          "throughput": 2.2975900826678073,
+          "fairness_index": 0.8928571428571429,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8905202746391296,
+              "avg_time": 0.3324326276779175,
+              "total_requests": 4
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7063908576965332,
+              "avg_time": 0.5015419721603394,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.650551438331604,
+              "avg_time": 0.4099360704421997,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.9407294988632202,
+              "avg_time": 0.5998499393463135,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.9977555990219116,
+          "throughput": 2.2320686056441486,
+          "fairness_index": 0.7352941176470589,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 1.3286442279815673,
+              "avg_time": 0.42613754272460935,
+              "total_requests": 5
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7676798105239868,
+              "avg_time": 0.4963064193725586,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5539431571960449,
+              "avg_time": 0.5530092716217041,
+              "total_requests": 1
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6225160360336304,
+              "avg_time": 0.4019196033477783,
+              "total_requests": 2
+            }
+          ]
+        }
+      ]
+    },
+    "dynamic": {
+      "RR": [
+        {
+          "average_latency": 0.8931315183639527,
+          "throughput": 2.0263927952608456,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5865074396133423,
+              "avg_time": 0.3839496374130249,
+              "total_requests": 2
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.784771203994751,
+              "avg_time": 0.5399110317230225,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.8855265776316324,
+              "avg_time": 0.4607822895050049,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 1.1773927211761475,
+              "avg_time": 0.5682697296142578,
+              "total_requests": 3
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7127549171447753,
+          "throughput": 2.542291629175028,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6721266110738119,
+              "avg_time": 0.334399938583374,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.931695302327474,
+              "avg_time": 0.4561304251352946,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.4468778371810913,
+              "avg_time": 0.30563652515411377,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7111638784408569,
+              "avg_time": 0.4752974510192871,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7401673316955566,
+          "throughput": 2.422664748468053,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.544631838798523,
+              "avg_time": 0.3477776050567627,
+              "total_requests": 2
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7078336477279663,
+              "avg_time": 0.4813040494918823,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.7921948432922363,
+              "avg_time": 0.38898134231567383,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.840052604675293,
+              "avg_time": 0.4341929753621419,
+              "total_requests": 3
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8229943513870239,
+          "throughput": 2.282720886628563,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.800806442896525,
+              "avg_time": 0.37885522842407227,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.0857887268066406,
+              "avg_time": 0.5287567774454752,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5213040113449097,
+              "avg_time": 0.33854448795318604,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7637749910354614,
+              "avg_time": 0.4904060363769531,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8918522596359253,
+          "throughput": 2.1079892782790965,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.747810959815979,
+              "avg_time": 0.4977530241012573,
+              "total_requests": 2
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6992225646972656,
+              "avg_time": 0.42885804176330566,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.9855841795603434,
+              "avg_time": 0.4592166741689046,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 1.0225676695505779,
+              "avg_time": 0.5043283303578695,
+              "total_requests": 3
+            }
+          ]
+        }
+      ],
+      "LC": [
+        {
+          "average_latency": 0.8591945171356201,
+          "throughput": 2.070330863661268,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.7991688251495361,
+              "avg_time": 0.41640400886535645,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.0317830244700115,
+              "avg_time": 0.49742428461710614,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6514464616775513,
+              "avg_time": 0.42558443546295166,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.898098349571228,
+              "avg_time": 0.6187460422515869,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7127965927124024,
+          "throughput": 2.540430282811043,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6698179244995117,
+              "avg_time": 0.33354393641153973,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.9327739874521891,
+              "avg_time": 0.4561116695404053,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.45023298263549805,
+              "avg_time": 0.3078345060348511,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7098621129989624,
+              "avg_time": 0.4758526086807251,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7169053554534912,
+          "throughput": 2.462460618309927,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.7109822432200114,
+              "avg_time": 0.3494864304860433,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7396273612976074,
+              "avg_time": 0.38172078132629395,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6016843318939209,
+              "avg_time": 0.3852900266647339,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8069280385971069,
+              "avg_time": 0.5483884811401367,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8233062267303467,
+          "throughput": 2.2817639291890606,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8013680775960287,
+              "avg_time": 0.37933866182963055,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.0888055960337322,
+              "avg_time": 0.5297180811564127,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5180315971374512,
+              "avg_time": 0.33748698234558105,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7632390260696411,
+              "avg_time": 0.4902150630950928,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8593640327453613,
+          "throughput": 2.152853753960407,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8898920218149821,
+              "avg_time": 0.41486557324727374,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.8906443119049072,
+              "avg_time": 0.43966325124104816,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.8306385278701782,
+              "avg_time": 0.5532909631729126,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7953771352767944,
+              "avg_time": 0.48741447925567627,
+              "total_requests": 2
+            }
+          ]
+        }
+      ],
+      "MLS": [
+        {
+          "average_latency": 0.8373310565948486,
+          "throughput": 2.0952103685514634,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.7984712918599447,
+              "avg_time": 0.41628551483154297,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7663880586624146,
+              "avg_time": 0.4963914155960083,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.8838605880737305,
+              "avg_time": 0.4320058027903239,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8967694044113159,
+              "avg_time": 0.6175668239593506,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.6785944938659668,
+          "throughput": 2.5765038406413345,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6719463666280111,
+              "avg_time": 0.3398753007253011,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.755254864692688,
+              "avg_time": 0.48276305198669434,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6295677820841471,
+              "avg_time": 0.33255759874979657,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6854463815689087,
+              "avg_time": 0.4492018222808838,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7201188802719116,
+          "throughput": 2.4530318510175984,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6993052959442139,
+              "avg_time": 0.34348058700561523,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7581459681193033,
+              "avg_time": 0.39068253835042316,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6055060625076294,
+              "avg_time": 0.38721632957458496,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8089114427566528,
+              "avg_time": 0.5498329401016235,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7902449131011963,
+          "throughput": 2.3241108357609406,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8011933167775472,
+              "avg_time": 0.37962929407755536,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7154179811477661,
+              "avg_time": 0.4463244676589966,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.8490143616994222,
+              "avg_time": 0.4311729272206624,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.7604950666427612,
+              "avg_time": 0.48883259296417236,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8679266452789307,
+          "throughput": 2.108398195977343,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8070392608642578,
+              "avg_time": 0.3734440008799235,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7564442157745361,
+              "avg_time": 0.5117775201797485,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.8309180736541748,
+              "avg_time": 0.553507924079895,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 1.0278080304463704,
+              "avg_time": 0.4973447322845459,
+              "total_requests": 3
+            }
+          ]
+        }
+      ],
+      "AWFB": [
+        {
+          "average_latency": 0.9193104982376099,
+          "throughput": 2.0002414041039365,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5965789556503296,
+              "avg_time": 0.4022204875946045,
+              "total_requests": 2
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 1.0984679857889812,
+              "avg_time": 0.5315142472585043,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6340482234954834,
+              "avg_time": 0.41678500175476074,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 1.1454822222391765,
+              "avg_time": 0.588947614034017,
+              "total_requests": 3
+            }
+          ]
+        },
+        {
+          "average_latency": 0.6910321474075317,
+          "throughput": 2.5869994381671457,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.7338299751281738,
+              "avg_time": 0.3583066463470459,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6306203603744507,
+              "avg_time": 0.4056515693664551,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.7171252568562826,
+              "avg_time": 0.3600622812906901,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6481075286865234,
+              "avg_time": 0.4495360851287842,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7534201622009278,
+          "throughput": 2.4239781915566834,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6854895750681559,
+              "avg_time": 0.3335830370585124,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.5753185749053955,
+              "avg_time": 0.4140324592590332,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.5831687450408936,
+              "avg_time": 0.38046014308929443,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 1.0535860856374104,
+              "avg_time": 0.5119051138559977,
+              "total_requests": 3
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8536676168441772,
+          "throughput": 2.224452878084368,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.5602229833602905,
+              "avg_time": 0.3701505661010742,
+              "total_requests": 2
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6687662601470947,
+              "avg_time": 0.42327845096588135,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.8287673791249593,
+              "avg_time": 0.4102025032043457,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 1.197465181350708,
+              "avg_time": 0.5593406359354655,
+              "total_requests": 3
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8587282180786133,
+          "throughput": 2.1211711880059445,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8236730098724365,
+              "avg_time": 0.417388916015625,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.9323077201843262,
+              "avg_time": 0.46772170066833496,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.692533016204834,
+              "avg_time": 0.4169914722442627,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.9671369791030884,
+              "avg_time": 0.6125309467315674,
+              "total_requests": 2
+            }
+          ]
+        }
+      ],
+      "MFO": [
+        {
+          "average_latency": 0.8408605813980102,
+          "throughput": 2.095750257440311,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.798805316289266,
+              "avg_time": 0.4163355032602946,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7302172183990479,
+              "avg_time": 0.47725892066955566,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.9187124570210775,
+              "avg_time": 0.4435768127441406,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8978090286254883,
+              "avg_time": 0.6186530590057373,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.6850832462310791,
+          "throughput": 2.559508688060062,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6615453561147054,
+              "avg_time": 0.3289673328399658,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7183589935302734,
+              "avg_time": 0.38745323816935223,
+              "total_requests": 3
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.6720670461654663,
+              "avg_time": 0.4303445816040039,
+              "total_requests": 2
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.6834926605224609,
+              "avg_time": 0.44852447509765625,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7101762056350708,
+          "throughput": 2.4725081618098628,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.6959670384724935,
+              "avg_time": 0.34016044934590656,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.6808345317840576,
+              "avg_time": 0.4354393482208252,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.678214947382609,
+              "avg_time": 0.3515717188517253,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.8087735176086426,
+              "avg_time": 0.5492004156112671,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.7786891460418701,
+          "throughput": 2.3270901486222617,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8312662442525228,
+              "avg_time": 0.41077733039855957,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7046114206314087,
+              "avg_time": 0.5001220703125,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.7856746514638265,
+              "avg_time": 0.36151806513468426,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.763422966003418,
+              "avg_time": 0.4900408983230591,
+              "total_requests": 2
+            }
+          ]
+        },
+        {
+          "average_latency": 0.8594424962997437,
+          "throughput": 2.1256627707622644,
+          "fairness_index": 0.9615384615384616,
+          "servers": [
+            {
+              "server": "Server1",
+              "bandwidth": 2000,
+              "avg_latency": 0.8097519874572754,
+              "avg_time": 0.37476015090942383,
+              "total_requests": 3
+            },
+            {
+              "server": "Server2",
+              "bandwidth": 1600,
+              "avg_latency": 0.7819991111755371,
+              "avg_time": 0.47047507762908936,
+              "total_requests": 2
+            },
+            {
+              "server": "Server3",
+              "bandwidth": 1800,
+              "avg_latency": 0.8849653402964274,
+              "avg_time": 0.4373818238576253,
+              "total_requests": 3
+            },
+            {
+              "server": "Server4",
+              "bandwidth": 1400,
+              "avg_latency": 0.973137378692627,
+              "avg_time": 0.6635195016860962,
+              "total_requests": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "stats_summary": {
+    "bursty": {
+      "RR": {
+        "average_latency_mean": 0.5561434936523437,
+        "average_latency_std": 0.05687063057648131,
+        "throughput_mean": 4.151523112082655,
+        "throughput_std": 0.40170451276830765,
+        "fairness_index_mean": 0.9615384615384616,
+        "fairness_index_std": 0.0
+      },
+      "LC": {
+        "average_latency_mean": 0.5334873914718627,
+        "average_latency_std": 0.05684399711072031,
+        "throughput_mean": 4.284245198587518,
+        "throughput_std": 0.44696123045832253,
+        "fairness_index_mean": 0.9615384615384616,
+        "fairness_index_std": 0.0
+      },
+      "MLS": {
+        "average_latency_mean": 0.3949605941772461,
+        "average_latency_std": 0.05252970863380563,
+        "throughput_mean": 4.121578787492828,
+        "throughput_std": 0.41507649011283054,
+        "fairness_index_mean": 0.6334841628959277,
+        "fairness_index_std": 0.1394090219894371
+      },
+      "AWFB": {
+        "average_latency_mean": 0.46577528953552244,
+        "average_latency_std": 0.11669694594255713,
+        "throughput_mean": 4.101297356269267,
+        "throughput_std": 0.39575507520894004,
+        "fairness_index_mean": 0.9358974358974359,
+        "fairness_index_std": 0.05733507634614845
+      },
+      "MFO": {
+        "average_latency_mean": 0.39229132652282717,
+        "average_latency_std": 0.04672170884091876,
+        "throughput_mean": 4.130319363195094,
+        "throughput_std": 0.43351401094161496,
+        "fairness_index_mean": 0.6843891402714932,
+        "fairness_index_std": 0.11382698980485356
+      }
+    },
+    "server_specific": {
+      "RR": {
+        "average_latency_mean": 0.9196379661560059,
+        "average_latency_std": 0.1556336677382361,
+        "throughput_mean": 2.410499384287688,
+        "throughput_std": 0.21457948164619012,
+        "fairness_index_mean": 0.7072829131652661,
+        "fairness_index_std": 0.06263495735293531
+      },
+      "LC": {
+        "average_latency_mean": 0.8375589323043823,
+        "average_latency_std": 0.10189316915209083,
+        "throughput_mean": 2.3868079279808714,
+        "throughput_std": 0.23300343377612842,
+        "fairness_index_mean": 0.8298319327731093,
+        "fairness_index_std": 0.08630082313631819
+      },
+      "MLS": {
+        "average_latency_mean": 0.8320463085174561,
+        "average_latency_std": 0.09841605751972618,
+        "throughput_mean": 2.3780680728862045,
+        "throughput_std": 0.2203783131795016,
+        "fairness_index_mean": 0.8298319327731093,
+        "fairness_index_std": 0.08630082313631819
+      },
+      "AWFB": {
+        "average_latency_mean": 0.8325828742980957,
+        "average_latency_std": 0.07086557590975667,
+        "throughput_mean": 2.3632731748084352,
+        "throughput_std": 0.2474324575868679,
+        "fairness_index_mean": 0.8351648351648352,
+        "fairness_index_std": 0.141593867370184
+      },
+      "MFO": {
+        "average_latency_mean": 0.8377428340911866,
+        "average_latency_std": 0.0994897676380724,
+        "throughput_mean": 2.3606028638407284,
+        "throughput_std": 0.21255657118443455,
+        "fairness_index_mean": 0.8298319327731093,
+        "fairness_index_std": 0.08630082313631819
+      }
+    },
+    "dynamic": {
+      "RR": {
+        "average_latency_mean": 0.8121800756454468,
+        "average_latency_std": 0.08379877531013079,
+        "throughput_mean": 2.276411867562317,
+        "throughput_std": 0.2138910129162692,
+        "fairness_index_mean": 0.9615384615384616,
+        "fairness_index_std": 0.0
+      },
+      "LC": {
+        "average_latency_mean": 0.7943133449554444,
+        "average_latency_std": 0.07402486645380779,
+        "throughput_mean": 2.301567889586341,
+        "throughput_std": 0.19932408672449267,
+        "fairness_index_mean": 0.9615384615384616,
+        "fairness_index_std": 0.0
+      },
+      "MLS": {
+        "average_latency_mean": 0.7788431978225708,
+        "average_latency_std": 0.07903328011436113,
+        "throughput_mean": 2.311451018389736,
+        "throughput_std": 0.21121604405153846,
+        "fairness_index_mean": 0.9615384615384616,
+        "fairness_index_std": 0.0
+      },
+      "AWFB": {
+        "average_latency_mean": 0.815231728553772,
+        "average_latency_std": 0.09144377794641376,
+        "throughput_mean": 2.271368619983616,
+        "throughput_std": 0.23515038662748888,
+        "fairness_index_mean": 0.9615384615384616,
+        "fairness_index_std": 0.0
+      },
+      "MFO": {
+        "average_latency_mean": 0.7748503351211548,
+        "average_latency_std": 0.07708566028818523,
+        "throughput_mean": 2.3161040053389526,
+        "throughput_std": 0.20533657316480028,
+        "fairness_index_mean": 0.9615384615384616,
+        "fairness_index_std": 0.0
+      }
+    }
+  }
+}
