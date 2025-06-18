@@ -1,0 +1,535 @@
+{
+  "metainfo": {
+    "title": "로드밸런싱 알고리즘 비교",
+    "description": "서버별 로드밸런싱 알고리즘의 성능을 비교합니다.",
+    "servers": [
+      {
+        "name": "Server1",
+        "bandwidth": 1000
+      },
+      {
+        "name": "Server2",
+        "bandwidth": 800
+      },
+      {
+        "name": "Server3",
+        "bandwidth": 900
+      },
+      {
+        "name": "Server4",
+        "bandwidth": 700
+      }
+    ],
+    "total_request": 12,
+    "algorithms": [
+      "RR",
+      "LC",
+      "AWFB",
+      "MFO"
+    ]
+  },
+  "requests": [
+    {
+      "request_id": 1,
+      "size": 72.2850597855426,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server1",
+          "latency": 0.07844805717468262,
+          "time": 0.07733702659606934
+        },
+        {
+          "name": "LC",
+          "server": "Server1",
+          "latency": 0.07504487037658691,
+          "time": 0.07419610023498535
+        },
+        {
+          "name": "AWFB",
+          "server": "Server3",
+          "latency": 0.08268308639526367,
+          "time": 0.08183884620666504
+        },
+        {
+          "name": "MFO",
+          "server": "Server1",
+          "latency": 0.0735311508178711,
+          "time": 0.07302403450012207
+        }
+      ]
+    },
+    {
+      "request_id": 2,
+      "size": 78.90244129094705,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server2",
+          "latency": 0.10434508323669434,
+          "time": 0.10321617126464844
+        },
+        {
+          "name": "LC",
+          "server": "Server2",
+          "latency": 0.10453915596008301,
+          "time": 0.1036539077758789
+        },
+        {
+          "name": "AWFB",
+          "server": "Server1",
+          "latency": 0.08274602890014648,
+          "time": 0.08190798759460449
+        },
+        {
+          "name": "MFO",
+          "server": "Server3",
+          "latency": 0.0933840274810791,
+          "time": 0.09274172782897949
+        }
+      ]
+    },
+    {
+      "request_id": 3,
+      "size": 92.69213845721092,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server3",
+          "latency": 0.10921216011047363,
+          "time": 0.10802102088928223
+        },
+        {
+          "name": "LC",
+          "server": "Server3",
+          "latency": 0.1045539379119873,
+          "time": 0.10369014739990234
+        },
+        {
+          "name": "AWFB",
+          "server": "Server2",
+          "latency": 0.12173795700073242,
+          "time": 0.1209101676940918
+        },
+        {
+          "name": "MFO",
+          "server": "Server2",
+          "latency": 0.11881875991821289,
+          "time": 0.11821198463439941
+        }
+      ]
+    },
+    {
+      "request_id": 4,
+      "size": 64.75274150465685,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server4",
+          "latency": 0.09875297546386719,
+          "time": 0.09754395484924316
+        },
+        {
+          "name": "LC",
+          "server": "Server4",
+          "latency": 0.09581375122070312,
+          "time": 0.09470009803771973
+        },
+        {
+          "name": "AWFB",
+          "server": "Server4",
+          "latency": 0.09859704971313477,
+          "time": 0.09755706787109375
+        },
+        {
+          "name": "MFO",
+          "server": "Server4",
+          "latency": 0.09332013130187988,
+          "time": 0.09270691871643066
+        }
+      ]
+    },
+    {
+      "request_id": 5,
+      "size": 75.62629917287575,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server1",
+          "latency": 0.15912914276123047,
+          "time": 0.08066701889038086
+        },
+        {
+          "name": "LC",
+          "server": "Server1",
+          "latency": 0.1510310173034668,
+          "time": 0.07599115371704102
+        },
+        {
+          "name": "AWFB",
+          "server": "Server2",
+          "latency": 0.22130775451660156,
+          "time": 0.09959912300109863
+        },
+        {
+          "name": "MFO",
+          "server": "Server1",
+          "latency": 0.15413308143615723,
+          "time": 0.08065080642700195
+        }
+      ]
+    },
+    {
+      "request_id": 6,
+      "size": 70.50205809331624,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server2",
+          "latency": 0.1975090503692627,
+          "time": 0.093170166015625
+        },
+        {
+          "name": "LC",
+          "server": "Server2",
+          "latency": 0.1930379867553711,
+          "time": 0.08851504325866699
+        },
+        {
+          "name": "AWFB",
+          "server": "Server4",
+          "latency": 0.19942402839660645,
+          "time": 0.10083675384521484
+        },
+        {
+          "name": "MFO",
+          "server": "Server3",
+          "latency": 0.17669200897216797,
+          "time": 0.08336424827575684
+        }
+      ]
+    },
+    {
+      "request_id": 7,
+      "size": 51.21368079686099,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server3",
+          "latency": 0.17114782333374023,
+          "time": 0.06193375587463379
+        },
+        {
+          "name": "LC",
+          "server": "Server3",
+          "latency": 0.16647815704345703,
+          "time": 0.06193828582763672
+        },
+        {
+          "name": "AWFB",
+          "server": "Server3",
+          "latency": 0.14383935928344727,
+          "time": 0.061192989349365234
+        },
+        {
+          "name": "MFO",
+          "server": "Server4",
+          "latency": 0.17148375511169434,
+          "time": 0.07819199562072754
+        }
+      ]
+    },
+    {
+      "request_id": 8,
+      "size": 52.652751509377524,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server4",
+          "latency": 0.17902302742004395,
+          "time": 0.08025598526000977
+        },
+        {
+          "name": "LC",
+          "server": "Server4",
+          "latency": 0.17606496810913086,
+          "time": 0.08025503158569336
+        },
+        {
+          "name": "AWFB",
+          "server": "Server2",
+          "latency": 0.29079294204711914,
+          "time": 0.06950926780700684
+        },
+        {
+          "name": "MFO",
+          "server": "Server2",
+          "latency": 0.18960165977478027,
+          "time": 0.07085084915161133
+        }
+      ]
+    },
+    {
+      "request_id": 9,
+      "size": 62.57882009683072,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server1",
+          "latency": 0.22674989700317383,
+          "time": 0.06761407852172852
+        },
+        {
+          "name": "LC",
+          "server": "Server1",
+          "latency": 0.2186281681060791,
+          "time": 0.06760597229003906
+        },
+        {
+          "name": "AWFB",
+          "server": "Server3",
+          "latency": 0.21622705459594727,
+          "time": 0.0724029541015625
+        },
+        {
+          "name": "MFO",
+          "server": "Server1",
+          "latency": 0.22169113159179688,
+          "time": 0.06761407852172852
+        }
+      ]
+    },
+    {
+      "request_id": 10,
+      "size": 85.87225006977705,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server2",
+          "latency": 0.3099031448364258,
+          "time": 0.1123971939086914
+        },
+        {
+          "name": "LC",
+          "server": "Server2",
+          "latency": 0.30462098121643066,
+          "time": 0.11160612106323242
+        },
+        {
+          "name": "AWFB",
+          "server": "Server1",
+          "latency": 0.1735529899597168,
+          "time": 0.09091901779174805
+        },
+        {
+          "name": "MFO",
+          "server": "Server4",
+          "latency": 0.29915308952331543,
+          "time": 0.12770819664001465
+        }
+      ]
+    },
+    {
+      "request_id": 11,
+      "size": 60.256020464900026,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server3",
+          "latency": 0.24314284324645996,
+          "time": 0.07200193405151367
+        },
+        {
+          "name": "LC",
+          "server": "Server3",
+          "latency": 0.238447904586792,
+          "time": 0.07196903228759766
+        },
+        {
+          "name": "AWFB",
+          "server": "Server3",
+          "latency": 0.2881908416748047,
+          "time": 0.07199907302856445
+        },
+        {
+          "name": "MFO",
+          "server": "Server3",
+          "latency": 0.24588799476623535,
+          "time": 0.06926202774047852
+        }
+      ]
+    },
+    {
+      "request_id": 12,
+      "size": 72.49154506149229,
+      "algorithm": [
+        {
+          "name": "RR",
+          "server": "Server4",
+          "latency": 0.2876319885253906,
+          "time": 0.10862517356872559
+        },
+        {
+          "name": "LC",
+          "server": "Server4",
+          "latency": 0.2846510410308838,
+          "time": 0.10859203338623047
+        },
+        {
+          "name": "AWFB",
+          "server": "Server3",
+          "latency": 0.3697359561920166,
+          "time": 0.08156275749206543
+        },
+        {
+          "name": "MFO",
+          "server": "Server2",
+          "latency": 0.28337883949279785,
+          "time": 0.09382104873657227
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "RR": {
+      "average_latency": 0.18041626612345377,
+      "throughput": 11.291105130363913,
+      "fairness_index": 1.0,
+      "servers": [
+        {
+          "server": "Server1",
+          "bandwidth": 1000,
+          "avg_latency": 0.15477569897969565,
+          "avg_time": 0.07520604133605957,
+          "total_requests": 3
+        },
+        {
+          "server": "Server2",
+          "bandwidth": 800,
+          "avg_latency": 0.2039190928141276,
+          "avg_time": 0.10292784372965495,
+          "total_requests": 3
+        },
+        {
+          "server": "Server3",
+          "bandwidth": 900,
+          "avg_latency": 0.1745009422302246,
+          "avg_time": 0.08065223693847656,
+          "total_requests": 3
+        },
+        {
+          "server": "Server4",
+          "bandwidth": 700,
+          "avg_latency": 0.18846933046976724,
+          "avg_time": 0.0954750378926595,
+          "total_requests": 3
+        }
+      ]
+    },
+    "LC": {
+      "average_latency": 0.1760759949684143,
+      "throughput": 11.508440809382972,
+      "fairness_index": 1.0,
+      "servers": [
+        {
+          "server": "Server1",
+          "bandwidth": 1000,
+          "avg_latency": 0.14823468526204428,
+          "avg_time": 0.07259774208068848,
+          "total_requests": 3
+        },
+        {
+          "server": "Server2",
+          "bandwidth": 800,
+          "avg_latency": 0.20073270797729492,
+          "avg_time": 0.1012583573659261,
+          "total_requests": 3
+        },
+        {
+          "server": "Server3",
+          "bandwidth": 900,
+          "avg_latency": 0.16982666651407877,
+          "avg_time": 0.07919915517171223,
+          "total_requests": 3
+        },
+        {
+          "server": "Server4",
+          "bandwidth": 700,
+          "avg_latency": 0.18550992012023926,
+          "avg_time": 0.09451572100321452,
+          "total_requests": 3
+        }
+      ]
+    },
+    "AWFB": {
+      "average_latency": 0.19073625405629477,
+      "throughput": 11.647816551391848,
+      "fairness_index": 0.8571428571428571,
+      "servers": [
+        {
+          "server": "Server1",
+          "bandwidth": 1000,
+          "avg_latency": 0.12814950942993164,
+          "avg_time": 0.08641350269317627,
+          "total_requests": 2
+        },
+        {
+          "server": "Server2",
+          "bandwidth": 800,
+          "avg_latency": 0.21127955118815103,
+          "avg_time": 0.09667285283406575,
+          "total_requests": 3
+        },
+        {
+          "server": "Server3",
+          "bandwidth": 900,
+          "avg_latency": 0.2201352596282959,
+          "avg_time": 0.07379932403564453,
+          "total_requests": 5
+        },
+        {
+          "server": "Server4",
+          "bandwidth": 700,
+          "avg_latency": 0.1490105390548706,
+          "avg_time": 0.0991969108581543,
+          "total_requests": 2
+        }
+      ]
+    },
+    "MFO": {
+      "average_latency": 0.17675630251566568,
+      "throughput": 11.448765777932152,
+      "fairness_index": 1.0,
+      "servers": [
+        {
+          "server": "Server1",
+          "bandwidth": 1000,
+          "avg_latency": 0.14978512128194174,
+          "avg_time": 0.07376297314961751,
+          "total_requests": 3
+        },
+        {
+          "server": "Server2",
+          "bandwidth": 800,
+          "avg_latency": 0.19726641972859701,
+          "avg_time": 0.09429462750752766,
+          "total_requests": 3
+        },
+        {
+          "server": "Server3",
+          "bandwidth": 900,
+          "avg_latency": 0.17198801040649414,
+          "avg_time": 0.08178933461507161,
+          "total_requests": 3
+        },
+        {
+          "server": "Server4",
+          "bandwidth": 700,
+          "avg_latency": 0.18798565864562988,
+          "avg_time": 0.09953570365905762,
+          "total_requests": 3
+        }
+      ]
+    }
+  }
+}

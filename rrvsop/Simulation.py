@@ -113,38 +113,36 @@ data = {
   "summary": summary,
 }
 
-# 결과 출력
-text = []
-for algorithm, res in summary.items():
-  text.append(f"{algorithm}\n응답시간: {res['average_latency']:.3f} sec\n처리량: {res['throughput']:.2f} req/sec\n공정성: {res['fairness_index']:.4f}")
-  print(f"{algorithm} = 응답시간: {res['average_latency']:.3f} sec, 처리량: {res['throughput']:.2f} req/sec, 공정성: {res['fairness_index']:.4f}")
-
 # 시각화
 x = np.arange(len(servers))
 num_algorithms = len(summary)
 width = 0.8 / num_algorithms  # 전체 너비 안에서 균등 분배
 offsets = np.linspace(-width * (num_algorithms - 1) / 2, width * (num_algorithms - 1) / 2, num_algorithms)
 
-labels = [f"{s.name}\n처리속도: {s.bandwidth} bytes/sec" for s in servers]
+labels = [f"{s.name}\nBandwidth: {s.bandwidth} bytes/sec" for s in servers]
 
 plt.figure(figsize=(14, 7))
 
 bars = []
 for idx, (algorithm, res) in enumerate(summary.items()):
-  bar = plt.bar(x + offsets[idx], [s["avg_latency"] for s in res["servers"]], width, label=algorithm)
+  label = f"{algorithm:5} = Latency: {res['average_latency']:.3f} sec, Throughput: {res['throughput']:.2f} req/sec, Fairness: {res['fairness_index']:.4f}"
+  print(label)
+  bar = plt.bar(x + offsets[idx], [s["avg_latency"] for s in res["servers"]], width, label=label)
   bars.append(bar)
 
+max_latency = max(max([s["avg_latency"] for s in res["servers"]]) for res in summary.values())
 plt.xticks(x, labels)
-plt.ylabel("평균 처리 시간 (s)")
-plt.title("로드밸런싱 알고리즘 비교")
-plt.legend()
+plt.ylabel("Average Latency (seconds)")
+plt.ylim(0, max_latency * 1.5)
+plt.title("Load Balancing Algorithm Comparison")
+plt.legend(loc="upper left", prop={'family': 'monospace'})
 
 def get_fontsize_by_algorithm_count(n):
-  if n <= 3: return 8
-  elif n <= 5: return 7
-  elif n <= 7: return 6
-  elif n <= 9: return 5
-  return 4
+  if n <= 3: return 10
+  elif n <= 5: return 9
+  elif n <= 7: return 8
+  elif n <= 9: return 7
+  return 6
 
 fontsize = get_fontsize_by_algorithm_count(num_algorithms)
 for idx in range(len(servers)):
@@ -156,7 +154,6 @@ for idx in range(len(servers)):
       f"{server["servers"][idx]["avg_time"]:.2f}s\n{server["servers"][idx]["total_requests"]} req",
       ha='center', va='bottom', fontsize=fontsize
     )
-plt.gcf().text(0.7, 0.5, "\n\n".join(text), fontsize=fontsize, bbox=dict(facecolor='white', alpha=0.6))
 plt.tight_layout()
 
 idx = 1

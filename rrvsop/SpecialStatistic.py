@@ -2,6 +2,7 @@ from Server import Server, calculate_metrics
 from Algorithm import get_algorithm_map_default
 import matplotlib.pyplot as plt
 from typing import Callable
+from tqdm import tqdm
 import numpy as np
 import matplotlib
 import threading
@@ -35,8 +36,6 @@ def run_simulation(servers: list[Server], dist: str, requests: list, algorithm: 
     for i, req in enumerate(requests):
       if dist == "dynamic" and i == 50 and servers[2].bandwidth > 500:
         servers[2].bandwidth *= 0.5
-        print(f"[Dynamic Change] Server3 bandwidth halved → {servers[2].bandwidth}")
-
       if dist == "server_specific" and req.get("preferred_server"):
         selected = next(s for s in servers if s.name == req["preferred_server"])
       else:
@@ -85,14 +84,13 @@ metainfo = {
   "title": "로드밸런싱 알고리즘 비교",
   "description": "서버별 로드밸런싱 알고리즘의 성능을 여러 요청 분포에 대해 비교",
   "servers": [{"name": s.name, "bandwidth": s.bandwidth} for s in servers],
-  "total_request": 100,
   "algorithms": list(algorithm_map.keys()),
   "distributions": distributions,
 }
 
 for dist in distributions:
   for run in range(num_runs):
-    total_request = 10  # 각 분포별 총 요청 수
+    total_request = 1000  # 각 분포별 총 요청 수
     np.random.seed(run)  # 각 실행마다 동일한 시드 사용
     metainfo["total_request"] = total_request
     # Generate request sizes based on distribution
@@ -101,14 +99,14 @@ for dist in distributions:
       num = 2  # Number of bursty sub-distributions
       for _ in range(num):
         sub = np.random.randint(total_request // num // 2, total_request*3 // num // 4)
-        burst = list(np.random.uniform(700, 1300, sub))
+        burst = list(np.random.uniform(70, 130, sub))
         idle = [0] * (total_request // num - sub)
         request_sizes.extend(burst + idle)
-      request_sizes.extend(list(np.random.uniform(700, 1300, total_request % num)))
+      request_sizes.extend(list(np.random.uniform(70, 130, total_request % num)))
     elif dist == "server_specific":
-      request_sizes = list(np.random.uniform(500, 1000, total_request))
+      request_sizes = list(np.random.uniform(50, 100, total_request))
     elif dist == "dynamic":
-      request_sizes = list(np.random.uniform(500, 1000, total_request))
+      request_sizes = list(np.random.uniform(50, 100, total_request))
     else:
       raise ValueError(f"Unknown distribution: {dist}")
 
@@ -129,7 +127,7 @@ for dist in distributions:
           "algorithm": [],
         })
 
-    for algorithm in algorithm_map.keys():
+    for algorithm in tqdm(algorithm_map.keys(), desc=f"Running {dist} distribution, {run+1}/{num_runs} runs"):
       matrix, result = run_simulation(servers, dist, requests, algorithm)
       average_latency, throughput, fairness_index = matrix
       summary_runs[dist][algorithm].append({
