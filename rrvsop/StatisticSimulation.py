@@ -1,5 +1,5 @@
 from Server import Server, calculate_metrics
-from Algorithm import get_algorithm_map
+from Algorithm import get_algorithm_map_default
 import matplotlib.pyplot as plt
 from typing import Callable
 import numpy as np
@@ -66,7 +66,7 @@ servers = [
   Server("Server3", 1800),
   Server("Server4", 1400)
 ]
-algorithm_map = get_algorithm_map(True, False, True, True, True, True, True, True, servers)
+algorithm_map = get_algorithm_map_default(servers)
 
 distributions = ["uniform", "normal", "exponential"]
 num_runs = 5
@@ -84,13 +84,16 @@ metainfo = {
 
 for dist in distributions:
   for run in range(num_runs):
+    total_request = 10  # 각 분포별 총 요청 수
+    np.random.seed(run)  # 각 실행마다 동일한 시드 사용
+    metainfo["total_request"] = total_request
     # Generate request sizes based on distribution
     if dist == "uniform":
-      request_sizes = list(np.random.uniform(500, 1000, 100))
+      request_sizes = list(np.random.uniform(500, 1000, total_request))
     elif dist == "normal":
-      request_sizes = list(np.clip(np.random.normal(loc=750, scale=150, size=100), 100, 1500))
+      request_sizes = list(np.clip(np.random.normal(loc=750, scale=150, size=total_request), 100, 1500))
     elif dist == "exponential":
-      request_sizes = list(np.random.exponential(scale=75, size=100))
+      request_sizes = list(np.random.exponential(scale=75, size=total_request))
     else:
       raise ValueError(f"Unknown distribution: {dist}")
 
