@@ -182,9 +182,9 @@ plt.legend(title="요청 분포")
 plt.tight_layout()
 
 idx = 1
-while os.path.exists(f"./try/special{idx}"):
+while os.path.exists(f"./special_statistic_try/try{idx}"):
   idx += 1
-folder = f"./try/special{idx}/"
+folder = f"./special_statistic_try/try{idx}/"
 
 os.makedirs(folder, exist_ok=True)
 json_path = os.path.join(folder, "result.json")
