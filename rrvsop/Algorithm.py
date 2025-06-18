@@ -76,16 +76,20 @@ def awfb_v2(servers, alpha=1.0, beta=1.0, w1=1.0, w2=0.5, w3=0.5):
     return random.choices(servers, weights=probs, k=1)[0]
   
 def my_optimizer(servers: list[Server]) -> Server:
-  def cost(s: Server) -> float:
-    # 가중치를 적절히 조절 (ex: latency 중심이면 w1 높게)
-    w1 = 0.6  # 대기 시간
-    w2 = 0.4  # 요청 수 기반 공정성
+    total_requests = sum(s.total_requests for s in servers)
 
-    waiting = s.estimate_latency()  # 예상 대기 시간
-    fairness = s.total_requests  # 요청이 많은 서버는 불이익
-    return w1 * waiting + w2 * fairness
+    # 가중치 설정 (알파: 지연, 베타: 공정성, 감마: 처리속도)
+    alpha = 0.6
+    beta = 0.3
+    gamma = 0.1
 
-  return min(servers, key=cost)
+    def cost(s: Server) -> float:
+        latency = s.estimate_latency()
+        fairness_penalty = (s.total_requests / total_requests)**2 if total_requests > 0 else 0
+        bandwidth_penalty = 1 / s.bandwidth if s.bandwidth > 0 else float('inf')
+        return alpha * latency + beta * fairness_penalty + gamma * bandwidth_penalty
+
+    return min(servers, key=cost)
 
 def get_algorithm_map(
   RoundRobin: bool,
