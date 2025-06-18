@@ -1,5 +1,5 @@
 from Server import Server, calculate_metrics
-from Algorithm import get_algorithm_map
+from Algorithm import get_algorithm_map_default
 import matplotlib.pyplot as plt
 from typing import Callable
 import numpy as np
@@ -67,7 +67,7 @@ servers = [
   Server("Server4", 700)
 ]
 
-algorithm_map = get_algorithm_map(True, True, True, True, True, True, True, True, servers)
+algorithm_map = get_algorithm_map_default(servers)
 request_sizes = list(np.random.uniform(50, 100, 1000))  # 요청 크기(byte)
 
 metainfo = {

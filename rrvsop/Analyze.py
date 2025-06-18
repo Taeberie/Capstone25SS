@@ -6,7 +6,11 @@ import os
 plt.rc('font', family='AppleGothic')
 plt.rcParams['axes.unicode_minus'] = False
 
-with open("try/special1/stats_summary.json", "r", encoding="utf-8") as f:
+folder = "special_statistic_try/try2/"
+
+json_path = os.path.join(folder, "stats_summary.json")
+
+with open(json_path, "r", encoding="utf-8") as f:
     stats = json.load(f)
 
 metrics = ["average_latency_mean", "throughput_mean", "fairness_index_mean"]
@@ -19,7 +23,8 @@ metric_labels = {
 distributions = [d for d in stats.keys()]
 algorithms = list(next(iter(stats.values())).keys())
 
-os.makedirs("visualize", exist_ok=True)
+visualize_folder = os.path.join(folder, "visualize")
+os.makedirs(visualize_folder, exist_ok=True)
 
 for metric in metrics:
     plt.figure(figsize=(12, 6))
@@ -34,7 +39,7 @@ for metric in metrics:
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig(f"visualize/{metric}_lineplot_special.png")
+    plt.savefig(os.path.join(visualize_folder, f"{metric}_lineplot_special.png"))
     plt.close()
 
 
@@ -42,12 +47,12 @@ for metric in metrics:
     plt.figure(figsize=(12, 6))
 
     data = {alg: [stats[dist][alg][metric] for dist in distributions] for alg in algorithms}
-    plt.boxplot(data.values(), labels=data.keys())
+    plt.boxplot(data.values(), tick_labels=data.keys())
 
     plt.title(f"요청 분포별 알고리즘 {metric_labels[metric]} 분포(Box Plot)")
     plt.xlabel("알고리즘")
     plt.ylabel(metric_labels[metric])
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig(f"visualize/{metric}_boxplot_special.png")
+    plt.savefig(os.path.join(visualize_folder, f"{metric}_boxplot_special.png"))
     plt.close()

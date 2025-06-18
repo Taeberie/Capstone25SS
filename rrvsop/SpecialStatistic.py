@@ -1,5 +1,5 @@
 from Server import Server, calculate_metrics
-from Algorithm import get_algorithm_map
+from Algorithm import get_algorithm_map_default
 import matplotlib.pyplot as plt
 from typing import Callable
 import numpy as np
@@ -12,7 +12,7 @@ import os
 matplotlib.rc('font', family='AppleGothic')
 plt.rcParams['axes.unicode_minus'] = False
 
-def run_simulation(servers: list[Server], request_sizes: list[float], requests: list, algorithm: str):
+def run_simulation(servers: list[Server], dist: str, requests: list, algorithm: str):
   global algorithm_map
   select_fn: Callable[[list[Server]], Server] = algorithm_map[algorithm]
   if select_fn is None:
@@ -74,7 +74,7 @@ servers = [
   Server("Server3", 1800),
   Server("Server4", 1400)
 ]
-algorithm_map = get_algorithm_map(True, False, True, True, True, True, True, True, servers)
+algorithm_map = get_algorithm_map_default(servers)
 
 distributions = ["bursty", "server_specific", "dynamic"]
 num_runs = 5
@@ -92,20 +92,23 @@ metainfo = {
 
 for dist in distributions:
   for run in range(num_runs):
+    total_request = 10  # 각 분포별 총 요청 수
+    np.random.seed(run)  # 각 실행마다 동일한 시드 사용
+    metainfo["total_request"] = total_request
     # Generate request sizes based on distribution
     if dist == "bursty":
       request_sizes = []
-      for _ in range(10):
-          burst = list(np.random.uniform(700, 1300, np.random.randint(10, 20)))
-          idle = [0] * np.random.randint(5, 15)
-          request_sizes.extend(burst + idle)
-
+      num = 2  # Number of bursty sub-distributions
+      for _ in range(num):
+        sub = np.random.randint(total_request // num // 2, total_request*3 // num // 4)
+        burst = list(np.random.uniform(700, 1300, sub))
+        idle = [0] * (total_request // num - sub)
+        request_sizes.extend(burst + idle)
+      request_sizes.extend(list(np.random.uniform(700, 1300, total_request % num)))
     elif dist == "server_specific":
-      request_sizes = list(np.random.uniform(500, 1000, 100))
-
+      request_sizes = list(np.random.uniform(500, 1000, total_request))
     elif dist == "dynamic":
-      request_sizes = list(np.random.uniform(500, 1000, 100))
-
+      request_sizes = list(np.random.uniform(500, 1000, total_request))
     else:
       raise ValueError(f"Unknown distribution: {dist}")
 
@@ -127,7 +130,7 @@ for dist in distributions:
         })
 
     for algorithm in algorithm_map.keys():
-      matrix, result = run_simulation(servers, request_sizes, requests, algorithm)
+      matrix, result = run_simulation(servers, dist, requests, algorithm)
       average_latency, throughput, fairness_index = matrix
       summary_runs[dist][algorithm].append({
         "average_latency": average_latency,

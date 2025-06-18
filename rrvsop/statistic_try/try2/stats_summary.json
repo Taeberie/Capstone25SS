@@ -1,0 +1,128 @@
+{
+  "uniform": {
+    "RR": {
+      "average_latency_mean": 0.8102723789215088,
+      "average_latency_std": 0.07066930175773935,
+      "throughput_mean": 2.2686999627506603,
+      "throughput_std": 0.17893336777253865,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    },
+    "LC": {
+      "average_latency_mean": 0.7938537168502807,
+      "average_latency_std": 0.07261071246880303,
+      "throughput_mean": 2.3013770696444107,
+      "throughput_std": 0.1953962835343532,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    },
+    "MLS": {
+      "average_latency_mean": 0.7778302717208863,
+      "average_latency_std": 0.07973089213529311,
+      "throughput_mean": 2.3142431098551737,
+      "throughput_std": 0.21147849189026405,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    },
+    "AWFB": {
+      "average_latency_mean": 0.8443033790588379,
+      "average_latency_std": 0.08200007841785034,
+      "throughput_mean": 2.2611731885065582,
+      "throughput_std": 0.17838603189139235,
+      "fairness_index_mean": 0.9102564102564102,
+      "fairness_index_std": 0.07022084070579052
+    },
+    "MFO": {
+      "average_latency_mean": 0.7742887210845947,
+      "average_latency_std": 0.07649279468732666,
+      "throughput_mean": 2.3168816503780056,
+      "throughput_std": 0.20472821695286744,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    }
+  },
+  "normal": {
+    "RR": {
+      "average_latency_mean": 0.8131234407424927,
+      "average_latency_std": 0.08857293466961681,
+      "throughput_mean": 2.2732194661031313,
+      "throughput_std": 0.20852456857583895,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    },
+    "LC": {
+      "average_latency_mean": 0.7959601259231568,
+      "average_latency_std": 0.08108695127074896,
+      "throughput_mean": 2.297546700945542,
+      "throughput_std": 0.20561948040719166,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    },
+    "MLS": {
+      "average_latency_mean": 0.7816455602645874,
+      "average_latency_std": 0.08818696158344597,
+      "throughput_mean": 2.2828123887362,
+      "throughput_std": 0.21030994981075574,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    },
+    "AWFB": {
+      "average_latency_mean": 0.8167141532897949,
+      "average_latency_std": 0.09235542115982628,
+      "throughput_mean": 2.2829580517527326,
+      "throughput_std": 0.22655029076431712,
+      "fairness_index_mean": 0.9478021978021979,
+      "fairness_index_std": 0.030715219471150947
+    },
+    "MFO": {
+      "average_latency_mean": 0.782322473526001,
+      "average_latency_std": 0.08627974983269016,
+      "throughput_mean": 2.297181368092348,
+      "throughput_std": 0.2118854823603431,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    }
+  },
+  "exponential": {
+    "RR": {
+      "average_latency_mean": 0.0815887689590454,
+      "average_latency_std": 0.03675694236999718,
+      "throughput_mean": 27.665391672274097,
+      "throughput_std": 12.782305827708308,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    },
+    "LC": {
+      "average_latency_mean": 0.07958758354187012,
+      "average_latency_std": 0.037145975574965795,
+      "throughput_mean": 28.46320394056269,
+      "throughput_std": 13.49962804821037,
+      "fairness_index_mean": 0.9615384615384616,
+      "fairness_index_std": 0.0
+    },
+    "MLS": {
+      "average_latency_mean": 0.07068710327148438,
+      "average_latency_std": 0.03702850648661261,
+      "throughput_mean": 28.820647979056517,
+      "throughput_std": 14.137764314111074,
+      "fairness_index_mean": 0.8491345256051138,
+      "fairness_index_std": 0.1265598836317561
+    },
+    "AWFB": {
+      "average_latency_mean": 0.08832357883453369,
+      "average_latency_std": 0.050621379719514956,
+      "throughput_mean": 28.424209433142025,
+      "throughput_std": 13.604666399656004,
+      "fairness_index_mean": 0.8512712777418661,
+      "fairness_index_std": 0.08363981910950359
+    },
+    "MFO": {
+      "average_latency_mean": 0.07098122596740723,
+      "average_latency_std": 0.03628242355004015,
+      "throughput_mean": 28.35831217892976,
+      "throughput_std": 13.677668942549163,
+      "fairness_index_mean": 0.8568376068376069,
+      "fairness_index_std": 0.11113165490552004
+    }
+  }
+}
