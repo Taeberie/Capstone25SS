@@ -28,10 +28,11 @@ def adaptive_weighted_flowaware_balancer(servers: list[Server], alpha=1.0, beta=
   scores = []
   for s in servers:
     latency = s.estimate_latency()
-    fairness_penalty = s.total_requests / total_requests
+    fairness_penalty = s.total_requests / total_requests if total_requests > 0 else 0
     score = -(w1 * latency + w2 * len(s.pending_requests) + w3 * fairness_penalty)
     scores.append(score)
   probs = softmax(scores, beta)
+  random.seed(42)  # 재현성을 위해 시드 설정
   return random.choices(servers, weights=probs, k=1)[0]
   
 def multi_factor_optimizer(servers: list[Server]) -> Server:
@@ -44,7 +45,7 @@ def multi_factor_optimizer(servers: list[Server]) -> Server:
 
   def cost(s: Server) -> float:
     latency = s.estimate_latency()
-    fairness_penalty = (s.total_requests / total_requests)**2 if total_requests > 0 else 0
+    fairness_penalty = s.total_requests / total_requests if total_requests > 0 else 0
     bandwidth_penalty = 1 / s.bandwidth if s.bandwidth > 0 else float('inf')
     return alpha * latency + beta * fairness_penalty + gamma * bandwidth_penalty
 
