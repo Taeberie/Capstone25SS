@@ -67,6 +67,7 @@ servers = [
   Server("Server4", 700)
 ]
 
+np.random.seed(42)  # 재현성을 위해 시드 설정
 algorithm_map = get_algorithm_map_default(servers)
 request_sizes = list(np.random.uniform(50, 100, 1000))  # 요청 크기(byte)
 
